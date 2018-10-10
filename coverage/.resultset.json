@@ -350,14 +350,7 @@
         null,
         null,
         null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
+        4,
         null,
         null
       ],
@@ -409,7 +402,11 @@
       "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/controllers/books_controller.rb": [
         1,
         1,
+        null,
         9,
+        9,
+        2,
+        null,
         null,
         null
       ],
@@ -419,6 +416,6 @@
         null
       ]
     },
-    "timestamp": 1539210520
+    "timestamp": 1539215666
   }
 }

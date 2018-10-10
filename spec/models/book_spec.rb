@@ -95,8 +95,8 @@ describe Book, type: :model do
       book_1.reviews << review_2
 
       expect(book_1.average_rating).to eq(3)
-      expect(Book.sorted_by_reviews_ascending.first.title).to eq("Poop Book")
-      expect(Book.sorted_by_reviews_descending.first.title).to eq("Catcher in the Rye")
+      expect(Book.sorted_by_reviews("ASC").first.title).to eq("Poop Book")
+      expect(Book.sorted_by_reviews("DESC").first.title).to eq("Catcher in the Rye")
     end
   end
 end

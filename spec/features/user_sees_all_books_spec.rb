@@ -59,16 +59,16 @@ describe 'user index' do
   it "user can navigate to sorted pages" do
     visit '/books'
     click_on("best_rated")
-    expect(page).to have_current_path("/books?sorting=rated_ascending")
+    expect(page).to have_current_path("/books?sorting=rating&direction=ASC")
     click_on("worst_rated")
-    expect(page).to have_current_path("/books?sorting=rated_descending")
+    expect(page).to have_current_path("/books?sorting=rating&direction=DESC")
     click_on("most_pages")
-    expect(page).to have_current_path("/books?sorting=pages_ascending")
+    expect(page).to have_current_path("/books?sorting=pages&direction=ASC")
     click_on("least_pages")
-    expect(page).to have_current_path("/books?sorting=pages_descending")
+    expect(page).to have_current_path("/books?sorting=pages&direction=DESC")
     click_on("most_reviews")
-    expect(page).to have_current_path("/books?sorting=reviews_ascending")
+    expect(page).to have_current_path("/books?sorting=reviews&direction=ASC")
     click_on("least_reviews")
-    expect(page).to have_current_path("/books?sorting=reviews_descending")
+    expect(page).to have_current_path("/books?sorting=reviews&direction=DESC")
   end
 end

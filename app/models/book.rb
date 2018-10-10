@@ -10,17 +10,10 @@ class Book < ApplicationRecord
     reviews.average(:rating).to_f
   end
 
-  def self.sorted_by_reviews_ascending
+  def self.sorted_by_reviews(direction)
     Book.select("books.*, avg(rating) AS avg_rating")
       .joins(:reviews)
       .group(:book_id, :id)
-      .order("avg_rating ASC")
-  end
-
-  def self.sorted_by_reviews_descending
-    Book.select("books.*, avg(rating) AS avg_rating")
-      .joins(:reviews)
-      .group(:book_id, :id)
-      .order("avg_rating DESC")
+      .order("avg_rating #{direction}")
   end
 end

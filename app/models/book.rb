@@ -7,7 +7,6 @@ class Book < ApplicationRecord
   has_many :reviews
 
   def average_rating
-    # binding.pry
-    reviews.all
+    reviews.average(:rating).to_f
   end
 end

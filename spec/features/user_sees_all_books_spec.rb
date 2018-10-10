@@ -17,6 +17,8 @@ describe 'user index' do
 
     visit '/books'
 
+
+
     expect(page).to have_content('1984')
     expect(page).to have_content('300')
     expect(page).to have_content('1936')
@@ -47,11 +49,14 @@ describe 'user index' do
     review_2.user_id = user_2.id
     review_2.book_id = book_1.id
     author_1.books << book_1
+    book_1.reviews << review_1
+    book_1.reviews << review_2
+
+
 
     visit '/books'
-    binding.pry
-    save_and_open_page
 
+    save_and_open_page
     expect(page).to have_content('4.5')
     # expect(page).to have_content('2')
   end

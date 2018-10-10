@@ -189,25 +189,22 @@
         1,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/book_spec.rb": [
+      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/author_spec.rb": [
         1,
         1,
         1,
-        2,
-        2,
-        2,
         2,
         null,
         1,
+        2,
         2,
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/book.rb": [
+      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/author.rb": [
         1,
         1,
-        1,
-        1,
+        null,
         1,
         1,
         null
@@ -217,24 +214,48 @@
         1,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/controllers/books_controller.rb": [
+      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/book_authors_spec.rb": [
+        1,
+        1,
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/controllers/application_controller.rb": [
+      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/book_author.rb": [
+        1,
         1,
         1,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/author.rb": [
+      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/book_spec.rb": [
+        1,
+        1,
+        1,
+        1,
         1,
         null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/book.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
         null
       ]
     },
-    "timestamp": 1539125855
+    "timestamp": 1539130905
   }
 }

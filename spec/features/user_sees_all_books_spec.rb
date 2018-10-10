@@ -58,6 +58,6 @@ describe 'user index' do
 
     save_and_open_page
     expect(page).to have_content('4.5')
-    # expect(page).to have_content('2')
+    expect(page).to have_content('2')
   end
 end

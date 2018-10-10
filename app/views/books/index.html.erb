@@ -8,5 +8,5 @@
 <p>Pages: <%= book.pages %></p>
 <p>Year: <%= book.year %></p>
 <p>Average Rating: <%= book.average_rating %></p>
-<!--TODO <p>Total Number of Reviews: <%# book.total_reviews %></p> -->
+<p>Total Number of Reviews: <%= book.reviews.count %></p>
 <% end %>

@@ -8,17 +8,17 @@
 require 'faker'
 def prepare
   title = Faker::Book.title
-  pages = Faker::Number.within(100,1000)
-  year = Faker::Number.within(1800,2018)
+  pages = Faker::Number.between(100,1000)
+  year = Faker::Number.between(1800,2018)
   hash = {title: title, pages: pages, year: year}
 end
 
 def review_book(book)
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.within(1,5)
+  rating = Faker::Number.between(0,6)
   new_review = Review.create(title: title, body: body, rating: rating)
-  new_review.users << create_user
+  new_review.user_id = create_user.id
   book.reviews << new_review
 end
 
@@ -37,6 +37,10 @@ end
 
   book_3 = Book.create(prepare)
 
+  author_1.books << book_1
+  author_1.books << book_2
+  author_1.books << book_3
+
   review_book(book_1)
   review_book(book_1)
   review_book(book_1)
@@ -53,21 +57,17 @@ end
 
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.within(1,5)
+  rating = Faker::Number.between(0,6)
   new_review = Review.create(title: title, body: body, rating: rating)
-  new_review.users << user
+  new_review.user_id = user.id
   book_3.reviews << new_review
-  
+
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.within(1,5)
+  rating = Faker::Number.between(0,6)
   new_review = Review.create(title: title, body: body, rating: rating)
+  new_review.user_id = user.id
   book_2.reviews << new_review
-
-
-  author_1.books << book_1
-  author_1.books << book_2
-  author_1.books << book_3
 end
 
 2.times do

@@ -60,4 +60,20 @@ describe 'user index' do
     expect(page).to have_content('4.5')
     expect(page).to have_content('2')
   end
+
+  it "user can navigate to sorted pages" do
+    visit '/books'
+    click_on("best_rated")
+    expect(page).to have_current_path("/books?sorting=rated_ascending")
+    click_on("worst_rated")
+    expect(page).to have_current_path("/books?sorting=rated_descending")
+    click_on("most_pages")
+    expect(page).to have_current_path("/books?sorting=pages_ascending")
+    click_on("least_pages")
+    expect(page).to have_current_path("/books?sorting=pages_descending")
+    click_on("most_reviews")
+    expect(page).to have_current_path("/books?sorting=reviews_ascending")
+    click_on("least_reviews")
+    expect(page).to have_current_path("/books?sorting=reviews_descending")
+  end
 end

@@ -6,8 +6,69 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-title = Faker::Book.title
-author = Faker::Book.author
-pages = Fake::Number.within(10,1000)
-year = Faker::Number.within(1800,2018)
-book_1 = Book.create(title: title, author: author, pages: pages, year: year)
+def prepare
+  title = Faker::Book.title
+  pages = Faker::Number.within(100,1000)
+  year = Faker::Number.within(1800,2018)
+  hash = {title: title, pages: pages, year: year}
+end
+
+def review_book(book)
+  title = Faker::Hipster.sentence(4)
+  body = Faker::Hipster.paragraph(2)
+  rating = Faker::Number.within(1,5)
+  new_review = Review.create(title: title, body: body, rating: rating)
+  new_review.users << create_user
+  book.reviews << new_review
+end
+
+def create_user
+  name = Faker::Internet.username
+  user = User.create(username: name)
+end
+
+10.times do
+  author_name = Faker::Book.author
+
+  author_1 = Author.create(name: author_name)
+  book_1 = Book.create(prepare)
+
+  book_2 = Book.create(prepare)
+
+  book_3 = Book.create(prepare)
+
+  review_book(book_1)
+  review_book(book_1)
+  review_book(book_1)
+
+  review_book(book_2)
+  review_book(book_2)
+  review_book(book_2)
+
+  review_book(book_3)
+  review_book(book_3)
+  review_book(book_3)
+
+
+  author_1.books << book_1
+  author_1.books << book_2
+  author_1.books << book_3
+end
+
+2.times do
+  author_name_1 = Faker::Book.author
+  author_name_2 = Faker::Book.author
+
+  author_1 = Author.create(name: author_name_1)
+  author_2 = Author.create(name: author_name_2)
+
+  book_1 = Book.create(prepare)
+
+  review_book(book_1)
+  review_book(book_1)
+  review_book(book_1)
+
+  author_1.books << book_1
+  author_2.books << book_1
+
+end

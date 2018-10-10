@@ -1,12 +1,23 @@
 <h1>All Books</h1>
 
+<h3>Sort Books<h3>
+<a id="best_rated" href="/books?sorting=rated_ascending">Sort by Best Rated</a>
+<!-- <select>
+  <option value="Sorted by best rated">Sorted by best rated</option>
+  <option value="Sorted by worst rated">Sorted by worst rated</option>
+  <option value="Sorted by most pages">Sorted by most pages</option>
+  <option value="Sorted by least pages">Sorted by least pages</option>
+  <option value="Sorted by most reviews">Sorted by most reviews</option>
+  <option value="Sorted by least reviews">Sorted by least reviews</option>
+</select> -->
+
 <% @books.each do |book|%>
-<h2><%= book.title %></h2>
-<p>Author: <% book.authors.each do |author| %>
-  <%= author.name  %>
-<% end %></p>
-<p>Pages: <%= book.pages %></p>
-<p>Year: <%= book.year %></p>
-<p>Average Rating: <%= book.average_rating %></p>
-<p>Total Number of Reviews: <%= book.reviews.count %></p>
+  <h2><%= book.title %></h2>
+  <p>Author: <% book.authors.each do |author| %>
+    <%= author.name  %>
+  <% end %></p>
+  <p>Pages: <%= book.pages %></p>
+  <p>Year: <%= book.year %></p>
+  <p>Average Rating: <%= book.average_rating %></p>
+  <p>Total Number of Reviews: <%= book.reviews.count %></p>
 <% end %>

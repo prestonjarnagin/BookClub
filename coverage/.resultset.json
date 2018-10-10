@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/environment.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/application.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/application.rb": [
         1,
         null,
         1,
@@ -41,12 +41,12 @@
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/boot.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/environments/test.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/environments/test.rb": [
         1,
         null,
         null,
@@ -90,7 +90,7 @@
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/application_controller_renderer.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -100,7 +100,7 @@
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/assets.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -116,7 +116,7 @@
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/backtrace_silencers.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -125,20 +125,20 @@
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/cookies_serializer.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/inflections.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -156,13 +156,13 @@
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/mime_types.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/initializers/wrap_parameters.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -178,142 +178,144 @@
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/config/routes.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/config/routes.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/helpers/application_helper.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/author_spec.rb": [
-        1,
-        1,
-        1,
-        2,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/author.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/book_authors_spec.rb": [
-        1,
-        1,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/book_author.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/book_spec.rb": [
-        1,
-        1,
-        1,
-        2,
-        2,
-        null,
-        2,
-        null,
-        1,
-        2,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/book.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/review_spec.rb": [
-        1,
-        1,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/review.rb": [
-        1,
-        1,
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/spec/models/author_spec.rb": [
         1,
         1,
         1,
         1,
         null,
-        1,
-        1,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/user_spec.rb": [
-        1,
-        1,
-        1,
-        2,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/models/user.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/controllers/books_controller.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/prestonjarnagin/turing/2module/projects/BookClub/app/controllers/application_controller.rb": [
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/models/author.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/spec/models/book_authors_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/models/book_author.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/spec/models/book_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/models/book.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        2,
+        null,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/spec/models/review_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/models/review.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/spec/models/user_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/controllers/books_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/isaacfalkenstine/turing/2module/projects/BookClub/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1539133310
+    "timestamp": 1539191913
   }
 }

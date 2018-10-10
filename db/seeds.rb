@@ -49,6 +49,21 @@ end
   review_book(book_3)
   review_book(book_3)
 
+  user = create_user
+
+  title = Faker::Hipster.sentence(4)
+  body = Faker::Hipster.paragraph(2)
+  rating = Faker::Number.within(1,5)
+  new_review = Review.create(title: title, body: body, rating: rating)
+  new_review.users << user
+  book_3.reviews << new_review
+  
+  title = Faker::Hipster.sentence(4)
+  body = Faker::Hipster.paragraph(2)
+  rating = Faker::Number.within(1,5)
+  new_review = Review.create(title: title, body: body, rating: rating)
+  book_2.reviews << new_review
+
 
   author_1.books << book_1
   author_1.books << book_2
@@ -70,5 +85,4 @@ end
 
   author_1.books << book_1
   author_2.books << book_1
-
 end

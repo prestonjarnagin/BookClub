@@ -8,16 +8,12 @@ describe 'user index' do
 
     author_1.books << book_1
 
-
-
     author_2 = Author.create(name: 'Aldous Huxley')
     book_2 = Book.create(title: 'Brave New World', pages: 290, year: 1968)
 
     author_2.books << book_2
 
     visit '/books'
-
-
 
     expect(page).to have_content('1984')
     expect(page).to have_content('300')
@@ -56,7 +52,6 @@ describe 'user index' do
 
     visit '/books'
 
-    save_and_open_page
     expect(page).to have_content('4.5')
     expect(page).to have_content('2')
   end

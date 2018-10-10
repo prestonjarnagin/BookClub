@@ -9,4 +9,18 @@ class Book < ApplicationRecord
   def average_rating
     reviews.average(:rating).to_f
   end
+
+  def self.sorted_by_reviews_ascending
+    Book.select("books.*, avg(rating) AS avg_rating")
+      .joins(:reviews)
+      .group(:book_id, :id)
+      .order("avg_rating ASC")
+  end
+
+  def self.sorted_by_reviews_descending
+    Book.select("books.*, avg(rating) AS avg_rating")
+      .joins(:reviews)
+      .group(:book_id, :id)
+      .order("avg_rating DESC")
+  end
 end

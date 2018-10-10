@@ -2,7 +2,8 @@
 
 <% @books.each do |book|%>
 <h2><%= book.title %></h2>
-<p>Author: <%= book.author %></p>
+<!-- TODO: Use ActiveRecord to display all of a book's authors'   -->
+<p>Author: <%= book.authors %></p>
 <p>Pages: <%= book.pages %></p>
 <p>Year: <%= book.year %></p>
 <% end %>

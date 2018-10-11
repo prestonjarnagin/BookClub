@@ -9,17 +9,16 @@ require 'faker'
 def prepare
   title = Faker::Book.title
   pages = Faker::Number.between(100,1000)
-  year = Faker::Number.between(1800,2018)
-  hash = {title: title, pages: pages, year: year}
+  year = Faker::Number.between(1918,2018)
+  @hash = {title: title, pages: pages, year: year}
 end
+
 
 def review_book(book)
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(0,6)
-  new_review = Review.create(title: title, body: body, rating: rating)
-  new_review.user_id = create_user.id
-  book.reviews << new_review
+  rating = Faker::Number.between(1,5)
+  new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: create_user.id)
 end
 
 def create_user
@@ -31,43 +30,35 @@ end
   author_name = Faker::Book.author
 
   author_1 = Author.create(name: author_name)
-  book_1 = Book.create(prepare)
+  book_1 = author_1.books.create(prepare)
 
-  book_2 = Book.create(prepare)
+  book_2 = author_1.books.create(prepare)
 
-  book_3 = Book.create(prepare)
+  book_3 = author_1.books.create(prepare)
 
-  author_1.books << book_1
-  author_1.books << book_2
-  author_1.books << book_3
+  12.times do
+    review_book(book_1)
+  end
 
-  review_book(book_1)
-  review_book(book_1)
-  review_book(book_1)
+  8.times do
+    review_book(book_2)
+  end
 
-  review_book(book_2)
-  review_book(book_2)
-  review_book(book_2)
-
-  review_book(book_3)
-  review_book(book_3)
-  review_book(book_3)
+  10.times do
+    review_book(book_3)
+  end
 
   user = create_user
 
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(0,6)
-  new_review = Review.create(title: title, body: body, rating: rating)
-  new_review.user_id = user.id
-  book_3.reviews << new_review
+  rating = Faker::Number.between(1,5)
+  new_review = book_3.reviews.create(title: title, body: body, rating: rating, user_id: user.id)
 
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(0,6)
-  new_review = Review.create(title: title, body: body, rating: rating)
-  new_review.user_id = user.id
-  book_2.reviews << new_review
+  rating = Faker::Number.between(1,5)
+  new_review = book_2.reviews.create(title: title, body: body, rating: rating, user_id: user.id)
 end
 
 2.times do
@@ -76,13 +67,12 @@ end
 
   author_1 = Author.create(name: author_name_1)
   author_2 = Author.create(name: author_name_2)
+  prepare
+  @hash[:authors] = [author_1, author_2]
 
-  book_1 = Book.create(prepare)
+  book_1 = Book.create(@hash)
 
-  review_book(book_1)
-  review_book(book_1)
-  review_book(book_1)
-
-  author_1.books << book_1
-  author_2.books << book_1
+  9.times do
+    review_book(book_1)
+  end
 end

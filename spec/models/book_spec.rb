@@ -10,92 +10,76 @@ describe Book, type: :model do
     it { should have_many(:authors).through(:book_authors) }
     it { should have_many(:reviews) }
   end
+
+
   before :each do
+
+    # Author Setup
     author_1 = Author.create(name: "J.D. Salinger")
 
-    book_1 = Book.create(title: "It's okay",
-                         pages: 200, year: 1940)
+    # User Setup
     user_1 = User.create(username: "Isaac F.")
     user_2 = User.create(username: "Preston J.")
-    review_1 = Review.create(
+
+    # First Book
+
+    book_1 = author_1.books.create(title: "It's okay", pages: 200, year: 1940)
+
+    book_1.reviews.create(
                 title: "Pretty good.",
                 body: "I enjoyed this book but it has it's issues.",
-                rating: 2)
-    review_2 = Review.create(
+                rating: 2,
+                user_id: user_1.id)
+    book_1.reviews.create(
                 title: "Great book!",
                 body: "I really liked this book! Must read!",
-                rating: 3)
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    review_2.user_id = user_2.id
-    review_2.book_id = book_1.id
-    author_1.books << book_1
-    book_1.reviews << review_1
-    book_1.reviews << review_2
+                rating: 3,
+                user_id: user_2.id)
 
-    book_1 = Book.create(title: "Poop Book",
-                         pages: 50, year: 1940)
-    user_1 = User.create(username: "Isaac F.")
-    user_2 = User.create(username: "Preston J.")
-    review_1 = book_1.reviews.create(
-                title: "Pretty good.",
-                body: "I enjoyed this book but it has it's issues.",
+    # Second Book
+
+    book_2 = author_1.books.create(title: "Poop Book", pages: 50, year: 1940)
+    book_2.reviews.create(
+                title: "Terrible",
+                body: "I didn't like this book",
                 rating: 1,
-                user: user_1)
+                user_id: user_1.id)
 
-    author_1.books << book_1
-
-    book_1 = Book.create(title: "Catcher in the Rye",
-                         pages: 600, year: 1940)
-    user_1 = User.create(username: "Isaac F.")
-    user_2 = User.create(username: "Preston J.")
-    review_1 = Review.create(
+    # Third Book
+    book_3 = author_1.books.create(title: "Catcher in the Rye", pages: 600, year: 1940)
+    book_3.reviews.create(
                 title: "Pretty good.",
                 body: "I enjoyed this book but it has it's issues.",
-                rating: 4)
-    review_2 = Review.create(
+                rating: 5,
+                user_id: user_1.id)
+    book_3.reviews.create(
                 title: "Great book!",
                 body: "I really liked this book! Must read!",
-                rating: 5)
-    review_3 = Review.create(
+                rating: 5,
+                user_id: user_2.id)
+    book_3.reviews.create(
                 title: "Great book!",
                 body: "I really liked this book! Must read!",
-                rating: 5)
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    review_2.user_id = user_2.id
-    review_2.book_id = book_1.id
-    review_3.user_id = user_2.id
-    review_3.book_id = book_1.id
-    author_1.books << book_1
-    book_1.reviews << review_1
-    book_1.reviews << review_2
-    book_1.reviews << review_3
+                rating: 5,
+                user_id: user_2.id)
 
-
-    @book_1 = Book.create(title: "Meh",
-                         pages: 300, year: 1940)
-    user_1 = User.create(username: "Isaac F.")
-    user_2 = User.create(username: "Preston J.")
-    review_1 = Review.create(
+    # Forth Book
+    @book_4 = author_1.books.create(title: "Meh", pages: 200, year: 1940)
+    @book_4.reviews.create(
                 title: "Pretty good.",
                 body: "I enjoyed this book but it has it's issues.",
-                rating: 3)
-    review_2 = Review.create(
+                rating: 4,
+                user_id: user_1.id)
+    @book_4.reviews.create(
                 title: "Great book!",
                 body: "I really liked this book! Must read!",
-                rating: 3)
-    review_1.user_id = user_1.id
-    review_1.book_id = @book_1.id
-    review_2.user_id = user_2.id
-    review_2.book_id = @book_1.id
-    author_1.books << @book_1
-    @book_1.reviews << review_1
-    @book_1.reviews << review_2
+                rating: 2,
+                user_id: user_2.id)
   end
+
   describe 'Methods' do
     it 'should be able to calculate average rating for a book' do
-      expect(@book_1.average_rating).to eq(3)
+      expect(@book_4.average_rating).to eq(3)
     end
     it 'should be able to sort books by ratings' do
       expect(Book.sorted_by_reviews("ASC").first.title).to eq("Poop Book")

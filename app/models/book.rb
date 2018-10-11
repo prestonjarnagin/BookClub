@@ -11,13 +11,20 @@ class Book < ApplicationRecord
   end
 
   def self.sorted_by_reviews(direction)
-    Book.select("books.*, avg(rating) AS avg_rating")
+    select("books.*, avg(rating) AS avg_rating")
       .joins(:reviews)
       .group(:book_id, :id)
       .order("avg_rating #{direction}")
   end
 
   def self.sorted_by_pages(direction)
-    Book.order("pages #{direction}")
+    order("pages #{direction}")
+  end
+
+  def self.sorted_by_reviews_count(direction)
+    books = select("books.*, count(reviews.id) AS total_reviews")
+      .joins(:reviews)
+      .group(:book_id, :id)
+      .order("total_reviews #{direction}")
   end
 end

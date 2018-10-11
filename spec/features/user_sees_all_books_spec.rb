@@ -70,5 +70,7 @@ describe 'user index' do
     expect(page).to have_current_path("/books?sorting=reviews&direction=ASC")
     click_on("least_reviews")
     expect(page).to have_current_path("/books?sorting=reviews&direction=DESC")
+
+    # expect(all(".book")[0]) this is how you test that your books are in order
   end
 end

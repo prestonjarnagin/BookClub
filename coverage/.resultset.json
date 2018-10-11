@@ -401,6 +401,10 @@
         null,
         1,
         1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/prestonjarnagin/turing/2module/projects/BookClub/spec/models/user_spec.rb": [
@@ -436,7 +440,8 @@
         null,
         null,
         1,
-        1,
+        2,
+        2,
         null,
         null
       ],
@@ -446,6 +451,6 @@
         null
       ]
     },
-    "timestamp": 1539285232
+    "timestamp": 1539290939
   }
 }

@@ -14,5 +14,6 @@ class BooksController < ApplicationController
 
   def show
       @book = Book.find(params[:id])
+      @reviews = Review.find_reviews_by_book(params[:id])
   end
 end

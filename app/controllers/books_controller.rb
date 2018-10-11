@@ -3,6 +3,8 @@ class BooksController < ApplicationController
     # binding.pry
     if params[:sorting] == "rating"
       @books = Book.sorted_by_reviews(params[:direction])
+    elsif params[:sorting] == "pages"
+      @books = Book.sorted_by_pages(params[:direction])
     else
       @books = Book.all
     end

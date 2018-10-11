@@ -16,4 +16,8 @@ class Book < ApplicationRecord
       .group(:book_id, :id)
       .order("avg_rating #{direction}")
   end
+
+  def self.sorted_by_pages(direction)
+    Book.order("pages #{direction}")
+  end
 end

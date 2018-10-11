@@ -1,23 +1,25 @@
 <h1>All Books</h1>
 
 <h3>Sort Books<h3>
-<a id="best_rated" href="/books?sorting=rating&direction=ASC">Sort by Worst Rated</a>
 <a id="worst_rated" href="/books?sorting=rating&direction=DESC">Sort by Best Rated</a>
-<a id="most_pages" href="/books?sorting=pages&direction=ASC">Sort by Least Pages</a>
+<a id="best_rated" href="/books?sorting=rating&direction=ASC">Sort by Worst Rated</a>
 <a id="least_pages" href="/books?sorting=pages&direction=DESC">Sort by Most Pages</a>
-<a id="most_reviews" href="/books?sorting=reviews&direction=ASC">Sort by Least Reviews</a>
+<a id="most_pages" href="/books?sorting=pages&direction=ASC">Sort by Least Pages</a>
 <a id="least_reviews" href="/books?sorting=reviews&direction=DESC">Sort by Most Reviews</a>
+<a id="most_reviews" href="/books?sorting=reviews&direction=ASC">Sort by Least Reviews</a>
 
 
-<!-- <select>
-  <option value="Sorted by best rated">Sorted by best rated</option>
-  <option value="Sorted by worst rated">Sorted by worst rated</option>
-  <option value="Sorted by most pages">Sorted by most pages</option>
-  <option value="Sorted by least pages">Sorted by least pages</option>
-  <option value="Sorted by most reviews">Sorted by most reviews</option>
-  <option value="Sorted by least reviews">Sorted by least reviews</option>
-</select> -->
-
+<!-- <form>
+  <select role="navigation">
+    <option href="/books?sorting=rating&direction=ASC">Sorted by best rated</option>
+    <option value="Sorted by worst rated">Sorted by worst rated</option>
+    <option value="Sorted by most pages">Sorted by most pages</option>
+    <option value="Sorted by least pages">Sorted by least pages</option>
+    <option value="Sorted by most reviews">Sorted by most reviews</option>
+    <option value="Sorted by least reviews">Sorted by least reviews</option>
+  </select>
+  <input type="submit" value="Sort" onclick="goToNewPage()"/>
+<form> -->
 <% @books.each do |book|%>
   <h2><%= book.title %></h2>
   <p>Author: <% book.authors.each do |author| %>

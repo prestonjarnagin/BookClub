@@ -8,16 +8,12 @@ describe 'user index' do
 
     author_1.books << book_1
 
-
-
     author_2 = Author.create(name: 'Aldous Huxley')
     book_2 = Book.create(title: 'Brave New World', pages: 290, year: 1968)
 
     author_2.books << book_2
 
     visit '/books'
-
-
 
     expect(page).to have_content('1984')
     expect(page).to have_content('300')
@@ -56,8 +52,25 @@ describe 'user index' do
 
     visit '/books'
 
-    save_and_open_page
     expect(page).to have_content('4.5')
-    # expect(page).to have_content('2')
+    expect(page).to have_content('2')
+  end
+
+  it "user can navigate to sorted pages" do
+    visit '/books'
+    click_on("best_rated")
+    expect(page).to have_current_path("/books?sorting=rating&direction=ASC")
+    click_on("worst_rated")
+    expect(page).to have_current_path("/books?sorting=rating&direction=DESC")
+    click_on("most_pages")
+    expect(page).to have_current_path("/books?sorting=pages&direction=ASC")
+    click_on("least_pages")
+    expect(page).to have_current_path("/books?sorting=pages&direction=DESC")
+    click_on("most_reviews")
+    expect(page).to have_current_path("/books?sorting=reviews&direction=ASC")
+    click_on("least_reviews")
+    expect(page).to have_current_path("/books?sorting=reviews&direction=DESC")
+
+    # expect(all(".book")[0]) this is how you test that your books are in order
   end
 end

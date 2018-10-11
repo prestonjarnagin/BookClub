@@ -1,12 +1,21 @@
 <h1>All Books</h1>
 
+<h3>Sort Books</h3>
+<a id="worst_rated" href="/books?sorting=rating&direction=DESC">Sort by Best Rated</a>
+<a id="best_rated" href="/books?sorting=rating&direction=ASC">Sort by Worst Rated</a>
+<a id="least_pages" href="/books?sorting=pages&direction=DESC">Sort by Most Pages</a>
+<a id="most_pages" href="/books?sorting=pages&direction=ASC">Sort by Least Pages</a>
+<a id="least_reviews" href="/books?sorting=reviews&direction=DESC">Sort by Most Reviews</a>
+<a id="most_reviews" href="/books?sorting=reviews&direction=ASC">Sort by Least Reviews</a>
+
+
 <% @books.each do |book|%>
-<h2><%= book.title %></h2>
-<p>Author: <% book.authors.each do |author| %>
-  <%= author.name  %>
-<% end %></p>
-<p>Pages: <%= book.pages %></p>
-<p>Year: <%= book.year %></p>
-<p>Average Rating: <%= book.average_rating %></p>
-<!--TODO <p>Total Number of Reviews: <%# book.total_reviews %></p> -->
+  <h2><%= book.title %></h2>
+  <p>Author: <% book.authors.each do |author| %>
+    <%= author.name  %>
+  <% end %></p>
+  <p>Pages: <%= book.pages %></p>
+  <p>Year: <%= book.year %></p>
+  <p>Average Rating: <%= book.average_rating %></p>
+  <p>Total Number of Reviews: <%= book.reviews.count %></p>
 <% end %>

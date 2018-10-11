@@ -16,7 +16,7 @@ end
 def review_book(book)
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(0,6)
+  rating = Faker::Number.between(1,5)
   new_review = Review.create(title: title, body: body, rating: rating)
   new_review.user_id = create_user.id
   book.reviews << new_review
@@ -57,14 +57,14 @@ end
 
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(0,6)
+  rating = Faker::Number.between(1,5)
   new_review = Review.create(title: title, body: body, rating: rating)
   new_review.user_id = user.id
   book_3.reviews << new_review
 
   title = Faker::Hipster.sentence(4)
   body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(0,6)
+  rating = Faker::Number.between(1,5)
   new_review = Review.create(title: title, body: body, rating: rating)
   new_review.user_id = user.id
   book_2.reviews << new_review

@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
   def index
-    # binding.pry
     if params[:sorting] == "rating"
       @books = Book.sorted_by_reviews(params[:direction])
     elsif params[:sorting] == "pages"
@@ -10,10 +9,12 @@ class BooksController < ApplicationController
     else
       @books = Book.all
     end
+    @top_books = Book.sorted_by_reviews_limited_to(3, "DESC")
+    @bottom_books = Book.sorted_by_reviews_limited_to(3, "ASC")
   end
 
   def show
-      @book = Book.find(params[:id])
-      @reviews = Review.find_reviews_by_book(params[:id])
+    @book = Book.find(params[:id])
+    @reviews = Review.find_reviews_by_book(params[:id])
   end
 end

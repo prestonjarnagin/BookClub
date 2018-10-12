@@ -1,5 +1,7 @@
 <h1><%= @book.title %></h1>
-<p>Author(s): <%= @book.authors %></p>
+<p>Author: <% @book.authors.each do |author| %>
+  <%= author.name  %>
+<% end %></p>
 <p>Pages: <%= @book.pages %></p>
 <p>Year Published: <%= @book.year %></p>
 <h2>Reviews</h2>

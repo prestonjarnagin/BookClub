@@ -9,6 +9,17 @@
 <a id="most_reviews" href="/books?sorting=reviews&direction=ASC">Sort by Least Reviews</a>
 
 
+<div class="stats">
+  <h4>Highest Rated Books</h4>
+    <% @top_books.each do |book| %>
+      <%= book.title %>,
+    <% end %>
+  <h4>Lowest Rated Books</h4>
+  <% @bottom_books.each do |book| %>
+    <%= book.title %>,
+  <% end %>
+</div>
+
 <% @books.each do |book|%>
   <h2><%= book.title %></h2>
   <p>Author: <% book.authors.each do |author| %>

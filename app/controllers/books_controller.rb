@@ -11,6 +11,8 @@ class BooksController < ApplicationController
     end
     @top_books = Book.sorted_by_reviews_limited_to(3, "DESC")
     @bottom_books = Book.sorted_by_reviews_limited_to(3, "ASC")
+    @top_users = User.sorted_by_reviews_count_limited_to(3, "DESC")
+    @bottom_users = User.sorted_by_reviews_count_limited_to(3, "ASC")
   end
 
   def show

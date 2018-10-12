@@ -18,6 +18,14 @@
   <% @bottom_books.each do |book| %>
     <%= book.title %>,
   <% end %>
+  <h4>Users With Most Reviews</h4>
+    <% @top_users.each do |user| %>
+      <%= user.username %>,
+    <% end %>
+  <h4>User With Least Reviews</h4>
+  <% @bottom_users.each do |user| %>
+    <%= user.username %>,
+  <% end %>
 </div>
 
 <% @books.each do |book|%>

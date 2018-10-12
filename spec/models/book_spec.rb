@@ -98,7 +98,6 @@ describe Book, type: :model do
       expect(Book.sorted_by_reviews_limited_to(3, "DESC").last.title).to eq("It's okay")
       expect(Book.sorted_by_reviews_limited_to(3, "ASC").first.title).to eq("Poop Book")
       expect(Book.sorted_by_reviews_limited_to(3, "ASC").last.title).to eq("Meh")
-
     end
   end
 end

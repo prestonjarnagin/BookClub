@@ -203,22 +203,4 @@ describe 'book show page' do
     expect(page).to have_content("Poop Book, It's okay, Meh")
     expect(page).to have_content("Isaac F., Preston J.,")
   end
-  it 'user can create new book' do
-    visit '/books'
-
-    click_button "New book"
-    expect(current_path).to eq("/books/new")
-
-    expect(page).to have_content("New Book")
-    fill_in 'Title', with: "Good book"
-    fill_in 'Pages', with: "567"
-    fill_in 'Year', with: "1987"
-    fill_in 'Author', with: "Jimmy"
-
-    click_button "Create Book"
-
-    # expect(current_path).to eq("/books/1")
-    expect(page).to have_content("Good book")
-    expect(page).to have_content("Jimmy")
-  end
 end

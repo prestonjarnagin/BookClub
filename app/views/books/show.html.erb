@@ -1,6 +1,6 @@
 <h1><%= @book.title %></h1>
 
-<!-- <form action="/books" method="delete"><input type="submit" value="Delete Book"></form> -->
+<form action="/reviews/new" method="get"><input type="submit" value="New book"></form>
 
 <%= link_to 'Delete', book_path(@book), method: :delete%>
 

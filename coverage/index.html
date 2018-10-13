@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-13T14:19:50-06:00">2018-10-13T14:19:50-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-13T14:30:58-06:00">2018-10-13T14:30:58-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -127,7 +127,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -505,14 +505,14 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="19">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="19">
+          <span class="hits">8</span>
           
           <code class="ruby">    @book = Book.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="20">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="20">
+          <span class="hits">8</span>
           
           <code class="ruby">    @reviews = Review.find_reviews_by_book(params[:id])</code>
         </li>
@@ -1237,8 +1237,8 @@
           <code class="ruby">  def self.find_reviews_by_book(book_id)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="12">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="12">
+          <span class="hits">8</span>
           
           <code class="ruby">    select(&quot;reviews.*, users.username AS username&quot;).joins(:user).where(book_id: book_id)</code>
         </li>

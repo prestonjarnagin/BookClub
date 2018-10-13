@@ -105,18 +105,18 @@ describe 'book index' do
     visit '/books'
     within ".top_books" do
       click_link '1984'
+    end
       expect(page).to have_current_path("/books/#{book_1.id}")
       expect(page).to have_content("1984")
       expect(page).to have_content("300")
-    end
 
     visit '/books'
     within ".bottom_books" do
       click_link '1984'
+    end
       expect(page).to have_current_path("/books/#{book_1.id}")
       expect(page).to have_content("1984")
       expect(page).to have_content("300")
-    end
   end
 end
 
@@ -247,8 +247,8 @@ describe 'book show page' do
 
     visit '/books'
 
-    expect(page).to have_content("Catcher in the Rye, Meh, It's okay")
-    expect(page).to have_content("Poop Book, It's okay, Meh")
-    expect(page).to have_content("Isaac F., Preston J.,")
+    expect(page).to have_content("-Catcher in the Rye- -Meh- -It's okay-")
+    expect(page).to have_content("-Poop Book- -It's okay- -Meh-")
+    expect(page).to have_content("-Isaac F.- -Preston J.-")
   end
 end

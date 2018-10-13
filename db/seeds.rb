@@ -47,18 +47,6 @@ end
   10.times do
     review_book(book_3)
   end
-
-  user = create_user
-
-  title = Faker::Hipster.sentence(4)
-  body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(1,5)
-  new_review = book_3.reviews.create(title: title, body: body, rating: rating, user_id: user.id)
-
-  title = Faker::Hipster.sentence(4)
-  body = Faker::Hipster.paragraph(2)
-  rating = Faker::Number.between(1,5)
-  new_review = book_2.reviews.create(title: title, body: body, rating: rating, user_id: user.id)
 end
 
 2.times do

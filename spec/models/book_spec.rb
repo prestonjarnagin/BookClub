@@ -93,5 +93,11 @@ describe Book, type: :model do
       expect(Book.sorted_by_reviews_count("ASC").first.title).to eq("Poop Book")
       expect(Book.sorted_by_reviews_count("DESC").first.title).to eq("Catcher in the Rye")
     end
+    it 'should be able to find top and bottom reviews' do
+      expect(Book.sorted_by_reviews_limited_to(3, "DESC").first.title).to eq("Catcher in the Rye")
+      expect(Book.sorted_by_reviews_limited_to(3, "DESC").last.title).to eq("It's okay")
+      expect(Book.sorted_by_reviews_limited_to(3, "ASC").first.title).to eq("Poop Book")
+      expect(Book.sorted_by_reviews_limited_to(3, "ASC").last.title).to eq("Meh")
+    end
   end
 end

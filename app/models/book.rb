@@ -27,4 +27,8 @@ class Book < ApplicationRecord
       .group(:book_id, :id)
       .order("total_reviews #{direction}")
   end
+
+  def self.sorted_by_reviews_limited_to(count, direction)
+    sorted_by_reviews(direction).limit(count)
+  end
 end

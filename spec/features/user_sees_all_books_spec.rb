@@ -95,8 +95,28 @@ describe 'book index' do
 
     visit '/books'
 
-    click_link '1984'
-    expect(page).to have_current_path("/books/#{book_1.id}")
+    within '.books_list' do
+      click_link '1984'
+      expect(page).to have_current_path("/books/#{book_1.id}")
+      expect(page).to have_content("1984")
+      expect(page).to have_content("300")
+    end
+
+    visit '/books'
+    within ".top_books" do
+      click_link '1984'
+      expect(page).to have_current_path("/books/#{book_1.id}")
+      expect(page).to have_content("1984")
+      expect(page).to have_content("300")
+    end
+
+    visit '/books'
+    within ".bottom_books" do
+      click_link '1984'
+      expect(page).to have_current_path("/books/#{book_1.id}")
+      expect(page).to have_content("1984")
+      expect(page).to have_content("300")
+    end
   end
 end
 

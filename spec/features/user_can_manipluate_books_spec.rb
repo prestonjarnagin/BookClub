@@ -25,11 +25,28 @@ describe 'Deletion' do
     Book.create(title: "Harry Potter", pages: 543, year: 2005)
     visit '/books/1'
 
-
     expect(page).to have_content("Harry Potter")
     click_link 'Delete'
 
     expect(current_path).to eq("/books")
     expect(page).to_not have_content("Harry Potter")
+  end
+end
+
+describe 'Reviewing' do
+  it 'user can add a review to a book' do
+    Book.create(title: "Harry Potter", pages: 543, year: 2005)
+    visit '/books/1'
+
+    expect(page).to have_content("Harry Potter")
+    click_button 'Add Review'
+    expect(current_path).to eq("/reviews/new")
+    fill_in 'Title', with: "Good book"
+    fill_in 'User', with: "isaacf_333"
+    select '4', from: "Rating"
+    fill_in 'Body', with: "I really enjoyed this book. Makes me wanna be a wizard."
+    click_button "Create Review"
+
+    expect(current_path).to eq("/books/1")
   end
 end

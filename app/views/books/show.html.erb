@@ -1,4 +1,9 @@
 <h1><%= @book.title %></h1>
+
+<!-- <form action="/books" method="delete"><input type="submit" value="Delete Book"></form> -->
+
+<%= link_to 'Delete', book_path(@book), method: :delete%>
+
 <p>Author: <% @book.authors.each do |author| %>
   <%= author.name  %>
 <% end %></p>

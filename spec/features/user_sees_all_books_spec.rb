@@ -70,6 +70,54 @@ describe 'book index' do
 
     # expect(all(".book")[0]) this is how you test that your books are in order
   end
+
+  it 'user can navigate to books through links' do
+    author_1 = Author.create(name: 'George Orwell')
+    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
+    user_1 = User.create(username: "Isaac F.")
+    user_2 = User.create(username: "Preston J.")
+    review_1 = Review.create(
+              title: "Great book!",
+              body: "I really liked this book! Must read!",
+              rating: 5)
+    review_2 = Review.create(
+              title: "Pretty good.",
+              body: "I enjoyed this book but it has it's issues.",
+              rating: 4)
+
+    review_1.user_id = user_1.id
+    review_1.book_id = book_1.id
+    review_2.user_id = user_2.id
+    review_2.book_id = book_1.id
+    author_1.books << book_1
+    book_1.reviews << review_1
+    book_1.reviews << review_2
+
+    visit '/books'
+
+    within '.books_list' do
+      click_link '1984'
+      expect(page).to have_current_path("/books/#{book_1.id}")
+      expect(page).to have_content("1984")
+      expect(page).to have_content("300")
+    end
+
+    visit '/books'
+    within ".top_books" do
+      click_link '1984'
+    end
+      expect(page).to have_current_path("/books/#{book_1.id}")
+      expect(page).to have_content("1984")
+      expect(page).to have_content("300")
+
+    visit '/books'
+    within ".bottom_books" do
+      click_link '1984'
+    end
+      expect(page).to have_current_path("/books/#{book_1.id}")
+      expect(page).to have_content("1984")
+      expect(page).to have_content("300")
+  end
 end
 
 describe 'book show page' do
@@ -199,8 +247,8 @@ describe 'book show page' do
 
     visit '/books'
 
-    expect(page).to have_content("Catcher in the Rye, Meh, It's okay")
-    expect(page).to have_content("Poop Book, It's okay, Meh")
-    expect(page).to have_content("Isaac F., Preston J.,")
+    expect(page).to have_content("-Catcher in the Rye- -Meh- -It's okay-")
+    expect(page).to have_content("-Poop Book- -It's okay- -Meh-")
+    expect(page).to have_content("-Isaac F.- -Preston J.-")
   end
 end

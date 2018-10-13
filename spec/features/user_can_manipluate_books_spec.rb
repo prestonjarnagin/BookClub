@@ -39,12 +39,12 @@ describe 'Reviewing' do
     visit '/books/1'
 
     expect(page).to have_content("Harry Potter")
-    click_link 'Add review'
+    click_button 'Add Review'
     expect(current_path).to eq("/reviews/new")
     fill_in 'Title', with: "Good book"
-    fill_in 'Username', with: "isaacf_333"
-    select '4', from: "ratings"
-    fill_in 'Review', with: "I really enjoyed this book. Makes me wanna be a wizard."
+    fill_in 'User', with: "isaacf_333"
+    select '4', from: "Rating"
+    fill_in 'Body', with: "I really enjoyed this book. Makes me wanna be a wizard."
     click_button "Create Review"
 
     expect(current_path).to eq("/books/1")

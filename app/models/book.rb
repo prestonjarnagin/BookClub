@@ -31,4 +31,19 @@ class Book < ApplicationRecord
   def self.sorted_by_reviews_limited_to(count, direction)
     sorted_by_reviews(direction).limit(count)
   end
+
+  def self.create_book(params)
+    if Book.find_by(title: params[:title]) == nil && Author.find_by(name: params[:authors]) == nil
+      author = Author.create(name: params[:authors])
+      book = author.books.create(title: params[:title], pages: params[:pages], year: params[:year])
+    elsif Book.find_by(title: params[:title]) && Author.find_by(name: params[:authors]) == nil
+      author = Author.create(name: params[:authors])
+      author.books << Book.find_by(title: params[:title])
+    elsif Book.find_by(title: params[:title]) == nil && Author.find_by(name: params[:authors])
+      author = Author.find_by(name: params[:authors])
+      author.books.create(title: params[:title], pages: params[:pages], year: params[:year])
+    else
+      Author.find_by(name: params[:authors]).books << Book.find_by(title: params[:title])
+    end
+  end
 end

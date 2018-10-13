@@ -96,7 +96,7 @@ describe 'book index' do
     visit '/books'
 
     click_link '1984'
-    expect(current_path).to eq.("books/#{book_1.id}")
+    expect(page).to have_current_path("/books/#{book_1.id}")
   end
 end
 

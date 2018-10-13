@@ -30,7 +30,7 @@
 </div>
 
 <% @books.each do |book|%>
-  <h2><%= book.title %></h2>
+  <a href="/books/<%= book.id %>"><%= book.title %></a>
   <p>Author: <% book.authors.each do |author| %>
     <%= author.name  %>
   <% end %></p>

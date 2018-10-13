@@ -220,6 +220,5 @@ describe 'book show page' do
     # expect(current_path).to eq("/books/1")
     expect(page).to have_content("Good book")
     expect(page).to have_content("Jimmy")
-
   end
 end

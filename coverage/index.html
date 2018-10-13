@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-13T13:31:56-06:00">2018-10-13T13:31:56-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-13T13:50:14-06:00">2018-10-13T13:50:14-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">99.73%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.26
+         2.25
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>28</b> files in total.
-    <b>348</b> relevant lines. 
-    <span class="green"><b>348</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>365</b> relevant lines. 
+    <span class="green"><b>364</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -67,7 +67,7 @@
         <td>27</td>
         <td>27</td>
         <td>0</td>
-        <td>4.1</td>
+        <td>4.4</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>31</td>
         <td>31</td>
         <td>0</td>
-        <td>3.7</td>
+        <td>3.9</td>
       </tr>
       
       <tr>
@@ -137,7 +137,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>10.0</td>
+        <td>10.7</td>
       </tr>
       
       <tr>
@@ -272,11 +272,11 @@
       
       <tr>
         <td class="strong"><a href="#bfbf9edf27222629dd227e1f42d076e9e63484b9" class="src_link" title="spec/features/user_sees_all_books_spec.rb">spec/features/user_sees_all_books_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>206</td>
-        <td>109</td>
-        <td>109</td>
-        <td>0</td>
+        <td class="green strong">99.21 %</td>
+        <td>234</td>
+        <td>126</td>
+        <td>125</td>
+        <td>1</td>
         <td>1.0</td>
       </tr>
       
@@ -409,8 +409,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="3">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="3">
+          <span class="hits">13</span>
           
           <code class="ruby">    if params[:sorting] == &quot;rating&quot;</code>
         </li>
@@ -421,8 +421,8 @@
           <code class="ruby">      @books = Book.sorted_by_reviews(params[:direction])</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="5">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="11" data-linenumber="5">
+          <span class="hits">11</span>
           
           <code class="ruby">    elsif params[:sorting] == &quot;pages&quot;</code>
         </li>
@@ -433,8 +433,8 @@
           <code class="ruby">      @books = Book.sorted_by_pages(params[:direction])</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="7">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="7">
+          <span class="hits">9</span>
           
           <code class="ruby">    elsif params[:sorting] == &quot;reviews&quot;</code>
         </li>
@@ -451,8 +451,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="10">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="10">
+          <span class="hits">7</span>
           
           <code class="ruby">      @books = Book.all</code>
         </li>
@@ -463,26 +463,26 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="12">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="12">
+          <span class="hits">13</span>
           
           <code class="ruby">    @top_books = Book.sorted_by_reviews_limited_to(3, &quot;DESC&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="13">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="13">
+          <span class="hits">13</span>
           
           <code class="ruby">    @bottom_books = Book.sorted_by_reviews_limited_to(3, &quot;ASC&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="14">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="14">
+          <span class="hits">13</span>
           
           <code class="ruby">    @top_users = User.sorted_by_reviews_count_limited_to(3, &quot;DESC&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="15">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="15">
+          <span class="hits">13</span>
           
           <code class="ruby">    @bottom_users = User.sorted_by_reviews_count_limited_to(3, &quot;ASC&quot;)</code>
         </li>
@@ -851,8 +851,8 @@
           <code class="ruby">  def average_rating</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="10">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="10">
+          <span class="hits">9</span>
           
           <code class="ruby">    reviews.average(:rating).to_f</code>
         </li>
@@ -893,8 +893,8 @@
           <code class="ruby">      .group(:book_id, :id)</code>
         </li>
       
-        <li class="covered" data-hits="32" data-linenumber="17">
-          <span class="hits">32</span>
+        <li class="covered" data-hits="34" data-linenumber="17">
+          <span class="hits">34</span>
           
           <code class="ruby">      .order(&quot;avg_rating #{direction}&quot;)</code>
         </li>
@@ -983,8 +983,8 @@
           <code class="ruby">  def self.sorted_by_reviews_limited_to(count, direction)</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="32">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="30" data-linenumber="32">
+          <span class="hits">30</span>
           
           <code class="ruby">    sorted_by_reviews(direction).limit(count)</code>
         </li>
@@ -1304,8 +1304,8 @@
           <code class="ruby">  def self.sorted_by_reviews_count_limited_to(count, direction)</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="6">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="30" data-linenumber="6">
+          <span class="hits">30</span>
           
           <code class="ruby">    users = select(&quot;users.*, count(reviews.id) AS total_reviews&quot;)</code>
         </li>
@@ -1328,8 +1328,8 @@
           <code class="ruby">      .order(&quot;total_reviews #{direction}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="10">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="30" data-linenumber="10">
+          <span class="hits">30</span>
           
           <code class="ruby">    users.limit(count)</code>
         </li>
@@ -2549,11 +2549,11 @@
         <div class="source_table" id="bfbf9edf27222629dd227e1f42d076e9e63484b9">
   <div class="header">
     <h3>spec/features/user_sees_all_books_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">99.21 %</span> covered</h4>
     <div>
-      <b>109</b> relevant lines. 
-      <span class="green"><b>109</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>126</b> relevant lines. 
+      <span class="green"><b>125</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -2995,145 +2995,145 @@
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  it &#39;user can navigate to books through links&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
-          <code class="ruby">describe &#39;book show page&#39; do</code>
+          <code class="ruby">    author_1 = Author.create(name: &#39;George Orwell&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &quot;user can navigate to book show page&quot; do</code>
+          <code class="ruby">    book_1 = Book.create(title: &#39;1984&#39;, pages: 300, year: 1936)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">    author_1 = Author.create(name: &#39;George Orwell&#39;)</code>
+          <code class="ruby">    user_1 = User.create(username: &quot;Isaac F.&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_1 = Book.create(title: &#39;1984&#39;, pages: 300, year: 1936)</code>
+          <code class="ruby">    user_2 = User.create(username: &quot;Preston J.&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">    user_1 = User.create(username: &quot;Isaac F.&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="80">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    user_2 = User.create(username: &quot;Preston J.&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
-          
           <code class="ruby">    review_1 = Review.create(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">              title: &quot;Great book!&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">              body: &quot;I really liked this book! Must read!&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">              rating: 5)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
+        <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
           <code class="ruby">    review_2 = Review.create(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">              title: &quot;Pretty good.&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">              body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby">              rating: 4)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="90">
+        <li class="covered" data-hits="1" data-linenumber="88">
           <span class="hits">1</span>
           
           <code class="ruby">    review_1.user_id = user_1.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="91">
+        <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
           <code class="ruby">    review_1.book_id = book_1.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="92">
+        <li class="covered" data-hits="1" data-linenumber="90">
           <span class="hits">1</span>
           
           <code class="ruby">    review_2.user_id = user_2.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
+        <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
           <code class="ruby">    review_2.book_id = book_1.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="94">
+        <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
           <code class="ruby">    author_1.books &lt;&lt; book_1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
           <code class="ruby">    book_1.reviews &lt;&lt; review_1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="96">
+        <li class="covered" data-hits="1" data-linenumber="94">
           <span class="hits">1</span>
           
           <code class="ruby">    book_1.reviews &lt;&lt; review_2</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &#39;/books&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
@@ -3145,43 +3145,43 @@
         <li class="covered" data-hits="1" data-linenumber="98">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit &quot;/books/#{book_1.id}&quot;</code>
+          <code class="ruby">    click_link &#39;1984&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="99">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="99">
           
-          <code class="ruby">    expect(page).to have_content(&#39;1984&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="100">
-          <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;300&#39;)</code>
+          <code class="ruby">    expect(current_path).to eq.(&quot;books/#{book_1.id}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content(&#39;1936&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe &#39;book show page&#39; do</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="104">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &quot;user can see book reviews&quot; do</code>
+          <code class="ruby">  it &quot;user can navigate to book show page&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="105">
@@ -3316,250 +3316,250 @@
           <code class="ruby">    visit &quot;/books/#{book_1.id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="covered" data-hits="1" data-linenumber="127">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    expect(page).to have_content(&#39;1984&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="128">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;Great book!&#39;)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;300&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="129">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;Pretty good.&#39;)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;1936&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="130">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content(&#39;Isaac F.&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="131">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content(&#39;Preston J.&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="132">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content(&#39;5&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="133">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content(&quot;I enjoyed this book but it has it&#39;s issues.&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="134">
+        <li class="never" data-hits="" data-linenumber="130">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="135">
+        <li class="never" data-hits="" data-linenumber="131">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="136">
+        <li class="covered" data-hits="1" data-linenumber="132">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;user can see stats for all books&#39; do</code>
+          <code class="ruby">  it &quot;user can see book reviews&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="137">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="138">
-          
-          
-          <code class="ruby">    # Author Setup</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="139">
+        <li class="covered" data-hits="1" data-linenumber="133">
           <span class="hits">1</span>
           
-          <code class="ruby">    author_1 = Author.create(name: &quot;J.D. Salinger&quot;)</code>
+          <code class="ruby">    author_1 = Author.create(name: &#39;George Orwell&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="140">
+        <li class="covered" data-hits="1" data-linenumber="134">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    book_1 = Book.create(title: &#39;1984&#39;, pages: 300, year: 1936)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="141">
-          
-          
-          <code class="ruby">    # User Setup</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="142">
+        <li class="covered" data-hits="1" data-linenumber="135">
           <span class="hits">1</span>
           
           <code class="ruby">    user_1 = User.create(username: &quot;Isaac F.&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
+        <li class="covered" data-hits="1" data-linenumber="136">
           <span class="hits">1</span>
           
           <code class="ruby">    user_2 = User.create(username: &quot;Preston J.&quot;)</code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="137">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    review_1 = Review.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="138">
+          
+          
+          <code class="ruby">              title: &quot;Great book!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby">              body: &quot;I really liked this book! Must read!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="140">
+          
+          
+          <code class="ruby">              rating: 5)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="141">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    review_2 = Review.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby">              title: &quot;Pretty good.&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="143">
+          
+          
+          <code class="ruby">              body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="144">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">              rating: 4)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="145">
           
           
-          <code class="ruby">    # First Book</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="146">
+        <li class="covered" data-hits="1" data-linenumber="146">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    review_1.user_id = user_1.id</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="147">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_1 = author_1.books.create(title: &quot;It&#39;s okay&quot;, pages: 200, year: 1940)</code>
+          <code class="ruby">    review_1.book_id = book_1.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="covered" data-hits="1" data-linenumber="148">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    review_2.user_id = user_2.id</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="149">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_1.reviews.create(</code>
+          <code class="ruby">    review_2.book_id = book_1.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="150">
+        <li class="covered" data-hits="1" data-linenumber="150">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                title: &quot;Pretty good.&quot;,</code>
+          <code class="ruby">    author_1.books &lt;&lt; book_1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="151">
+        <li class="covered" data-hits="1" data-linenumber="151">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
+          <code class="ruby">    book_1.reviews &lt;&lt; review_1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="152">
+        <li class="covered" data-hits="1" data-linenumber="152">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                rating: 2,</code>
+          <code class="ruby">    book_1.reviews &lt;&lt; review_2</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="153">
           
           
-          <code class="ruby">                user_id: user_1.id)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="154">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_1.reviews.create(</code>
+          <code class="ruby">    visit &quot;/books/#{book_1.id}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="155">
           
           
-          <code class="ruby">                title: &quot;Great book!&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="covered" data-hits="1" data-linenumber="156">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                body: &quot;I really liked this book! Must read!&quot;,</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Great book!&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="157">
+        <li class="covered" data-hits="1" data-linenumber="157">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                rating: 3,</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Pretty good.&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                user_id: user_2.id)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Isaac F.&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;Preston J.&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="160">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;5&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="161">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;I enjoyed this book but it has it&#39;s issues.&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="162">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="163">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="160">
-          
-          
-          <code class="ruby">    # Second Book</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="161">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="162">
+        <li class="covered" data-hits="1" data-linenumber="164">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_2 = author_1.books.create(title: &quot;Poop Book&quot;, pages: 50, year: 1940)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="163">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    book_2.reviews.create(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="164">
-          
-          
-          <code class="ruby">                title: &quot;Terrible&quot;,</code>
+          <code class="ruby">  it &#39;user can see stats for all books&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="165">
           
           
-          <code class="ruby">                body: &quot;I didn&#39;t like this book&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="166">
           
           
-          <code class="ruby">                rating: 1,</code>
+          <code class="ruby">    # Author Setup</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="167">
+        <li class="covered" data-hits="1" data-linenumber="167">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                user_id: user_1.id)</code>
+          <code class="ruby">    author_1 = Author.create(name: &quot;J.D. Salinger&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="168">
@@ -3571,226 +3571,394 @@
         <li class="never" data-hits="" data-linenumber="169">
           
           
-          <code class="ruby">    # Third Book</code>
+          <code class="ruby">    # User Setup</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="170">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_3 = author_1.books.create(title: &quot;Catcher in the Rye&quot;, pages: 600, year: 1940)</code>
+          <code class="ruby">    user_1 = User.create(username: &quot;Isaac F.&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="171">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_3.reviews.create(</code>
+          <code class="ruby">    user_2 = User.create(username: &quot;Preston J.&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="172">
           
           
-          <code class="ruby">                title: &quot;Pretty good.&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="173">
           
           
-          <code class="ruby">                body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
+          <code class="ruby">    # First Book</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="174">
           
           
-          <code class="ruby">                rating: 5,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="175">
-          
-          
-          <code class="ruby">                user_id: user_1.id)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="176">
+        <li class="covered" data-hits="1" data-linenumber="175">
           <span class="hits">1</span>
           
-          <code class="ruby">    book_3.reviews.create(</code>
+          <code class="ruby">    book_1 = author_1.books.create(title: &quot;It&#39;s okay&quot;, pages: 200, year: 1940)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="177">
+        <li class="never" data-hits="" data-linenumber="176">
           
           
-          <code class="ruby">                title: &quot;Great book!&quot;,</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="177">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    book_1.reviews.create(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="178">
           
           
-          <code class="ruby">                body: &quot;I really liked this book! Must read!&quot;,</code>
+          <code class="ruby">                title: &quot;Pretty good.&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="179">
           
           
-          <code class="ruby">                rating: 5,</code>
+          <code class="ruby">                body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="180">
           
           
-          <code class="ruby">                user_id: user_2.id)</code>
+          <code class="ruby">                rating: 2,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="181">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    book_3.reviews.create(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="182">
-          
-          
-          <code class="ruby">                title: &quot;Great book!&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="183">
-          
-          
-          <code class="ruby">                body: &quot;I really liked this book! Must read!&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="184">
-          
-          
-          <code class="ruby">                rating: 5,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="185">
-          
-          
-          <code class="ruby">                user_id: user_2.id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="186">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="187">
-          
-          
-          <code class="ruby">    # Forth Book</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="188">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @book_4 = author_1.books.create(title: &quot;Meh&quot;, pages: 200, year: 1940)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="189">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @book_4.reviews.create(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="190">
-          
-          
-          <code class="ruby">                title: &quot;Pretty good.&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="191">
-          
-          
-          <code class="ruby">                body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="192">
-          
-          
-          <code class="ruby">                rating: 4,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="193">
+        <li class="never" data-hits="" data-linenumber="181">
           
           
           <code class="ruby">                user_id: user_1.id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="194">
+        <li class="covered" data-hits="1" data-linenumber="182">
           <span class="hits">1</span>
           
-          <code class="ruby">    @book_4.reviews.create(</code>
+          <code class="ruby">    book_1.reviews.create(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="195">
+        <li class="never" data-hits="" data-linenumber="183">
           
           
           <code class="ruby">                title: &quot;Great book!&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="196">
+        <li class="never" data-hits="" data-linenumber="184">
           
           
           <code class="ruby">                body: &quot;I really liked this book! Must read!&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="197">
+        <li class="never" data-hits="" data-linenumber="185">
           
           
-          <code class="ruby">                rating: 2,</code>
+          <code class="ruby">                rating: 3,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="198">
+        <li class="never" data-hits="" data-linenumber="186">
           
           
           <code class="ruby">                user_id: user_2.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="199">
+        <li class="never" data-hits="" data-linenumber="187">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="200">
+        <li class="never" data-hits="" data-linenumber="188">
+          
+          
+          <code class="ruby">    # Second Book</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="189">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="190">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit &#39;/books&#39;</code>
+          <code class="ruby">    book_2 = author_1.books.create(title: &quot;Poop Book&quot;, pages: 50, year: 1940)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="191">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    book_2.reviews.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="192">
+          
+          
+          <code class="ruby">                title: &quot;Terrible&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="193">
+          
+          
+          <code class="ruby">                body: &quot;I didn&#39;t like this book&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="194">
+          
+          
+          <code class="ruby">                rating: 1,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="195">
+          
+          
+          <code class="ruby">                user_id: user_1.id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="196">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="197">
+          
+          
+          <code class="ruby">    # Third Book</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="198">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    book_3 = author_1.books.create(title: &quot;Catcher in the Rye&quot;, pages: 600, year: 1940)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="199">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    book_3.reviews.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="200">
+          
+          
+          <code class="ruby">                title: &quot;Pretty good.&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="201">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="202">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="202">
           
-          <code class="ruby">    expect(page).to have_content(&quot;Catcher in the Rye, Meh, It&#39;s okay&quot;)</code>
+          
+          <code class="ruby">                rating: 5,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="203">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="203">
           
-          <code class="ruby">    expect(page).to have_content(&quot;Poop Book, It&#39;s okay, Meh&quot;)</code>
+          
+          <code class="ruby">                user_id: user_1.id)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="204">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&quot;Isaac F., Preston J.,&quot;)</code>
+          <code class="ruby">    book_3.reviews.create(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="205">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">                title: &quot;Great book!&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="206">
+          
+          
+          <code class="ruby">                body: &quot;I really liked this book! Must read!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="207">
+          
+          
+          <code class="ruby">                rating: 5,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="208">
+          
+          
+          <code class="ruby">                user_id: user_2.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="209">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    book_3.reviews.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="210">
+          
+          
+          <code class="ruby">                title: &quot;Great book!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="211">
+          
+          
+          <code class="ruby">                body: &quot;I really liked this book! Must read!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="212">
+          
+          
+          <code class="ruby">                rating: 5,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="213">
+          
+          
+          <code class="ruby">                user_id: user_2.id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="214">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="215">
+          
+          
+          <code class="ruby">    # Forth Book</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="216">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @book_4 = author_1.books.create(title: &quot;Meh&quot;, pages: 200, year: 1940)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="217">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @book_4.reviews.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="218">
+          
+          
+          <code class="ruby">                title: &quot;Pretty good.&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="219">
+          
+          
+          <code class="ruby">                body: &quot;I enjoyed this book but it has it&#39;s issues.&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="220">
+          
+          
+          <code class="ruby">                rating: 4,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="221">
+          
+          
+          <code class="ruby">                user_id: user_1.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="222">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @book_4.reviews.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="223">
+          
+          
+          <code class="ruby">                title: &quot;Great book!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="224">
+          
+          
+          <code class="ruby">                body: &quot;I really liked this book! Must read!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="225">
+          
+          
+          <code class="ruby">                rating: 2,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="226">
+          
+          
+          <code class="ruby">                user_id: user_2.id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="227">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="228">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &#39;/books&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="229">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="230">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;Catcher in the Rye, Meh, It&#39;s okay&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="231">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;Poop Book, It&#39;s okay, Meh&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="232">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;Isaac F., Preston J.,&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="233">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="234">
           
           
           <code class="ruby">end</code>

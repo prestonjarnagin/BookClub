@@ -99,5 +99,29 @@ describe Book, type: :model do
       expect(Book.sorted_by_reviews_limited_to(3, "ASC").first.title).to eq("Poop Book")
       expect(Book.sorted_by_reviews_limited_to(3, "ASC").last.title).to eq("Meh")
     end
+    it 'should be able to create a book and author if they dont already exist' do
+      params = {title: "Catcher in the Rye", pages: 600, year: 1940, authors:"J.D. Salinger"}
+      Book.create_book(params)
+      expect(Book.all.count).to eq(4)
+      expect(Author.all.count).to eq(1)
+
+      params = {title: "Catcher in the Rye", pages: 600, year: 1940, authors:"J.K. Rowling"}
+      Book.create_book(params)
+      expect(Book.all.count).to eq(4)
+      expect(Author.all.count).to eq(2)
+      expect(Author.all.last.books.count).to eq(1)
+
+      params = {title: "Harry Potter", pages: 600, year: 1940, authors:"J.K. Rowling"}
+      Book.create_book(params)
+      expect(Book.all.count).to eq(5)
+      expect(Author.all.count).to eq(2)
+      expect(Author.all.last.books.count).to eq(2)
+
+      params = {title: "A Song of Ice and Fire", pages: 600, year: 1940, authors:"George R.R. Martin"}
+      Book.create_book(params)
+      expect(Book.all.count).to eq(6)
+      expect(Author.all.count).to eq(3)
+      expect(Author.all.last.books.count).to eq(1)
+    end
   end
 end

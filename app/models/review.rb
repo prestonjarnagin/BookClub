@@ -25,6 +25,6 @@ class Review < ApplicationRecord
   end
 
   def self.find_reviews_by_user_id(user_id)
-    where(user_id: user_id)
+  Review.select('reviews.*, books.title AS book_title').joins(:book)
   end
 end

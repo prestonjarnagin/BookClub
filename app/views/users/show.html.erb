@@ -1,0 +1,18 @@
+<h1><%= @user.username %></h1>
+
+<div class=reviews>
+
+  <h2>Reviews</h3>
+    <h3>Sort Reviews</h3>
+    <a id="newest_reviews" href="?sorting=recency&direction=ASC">Sort By Most Recent</a>
+    <a id="oldest_reviews" href="?sorting=recency&direction=DESC">Sort By Least Recent</a>
+    <% @reviews.each do |review| %>
+      <div class="review" id="<%= review.id %>">
+        <h3>Book: <%= review.book_title %></h3>
+        <h4>Overall Rating: <%= review.rating  %> / 5</h4>
+        <h5>Review Title: <%= review.title  %><h5>
+        <p>Body: <%= review.body  %></p>
+        <br />
+      </div>
+    <% end %>
+</div>

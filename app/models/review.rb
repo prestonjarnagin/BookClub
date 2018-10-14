@@ -23,4 +23,8 @@ class Review < ApplicationRecord
     end
     review
   end
+
+  def self.find_reviews_by_user_id(user_id)
+    where(user_id: user_id)
+  end
 end

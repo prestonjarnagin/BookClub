@@ -49,4 +49,8 @@ class Book < ApplicationRecord
     end
     book
   end
+
+  def self.find_reviews_by_book(book_id)
+    select("books.*, users.username AS username").joins(:user).where(book_id: book_id)
+  end
 end

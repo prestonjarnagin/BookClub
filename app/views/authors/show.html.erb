@@ -3,5 +3,8 @@
 <p>Books: <% @author.books.each do |book| %>
   --<%= book.title  %>
   Pages: <%= book.pages %>--
-  <%  binding.pry %>
+  Highest review:
+  User: <%= book.best_review.user.username %>
+  Rating(out of 5)<%= book.best_review.rating %>
+  Title: <%= book.best_review.title %>
 <% end %></p>

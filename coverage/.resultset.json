@@ -214,14 +214,39 @@
         null,
         null,
         null,
+        1,
+        null,
+        null,
+        null,
         null,
         1,
         null,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null,
         null
@@ -702,6 +727,10 @@
         null,
         5,
         null,
+        null,
+        1,
+        9,
+        null,
         null
       ],
       "/Users/isaacfalkenstine/turing/2module/projects/BookClub/spec/models/review_spec.rb": [
@@ -908,6 +937,6 @@
         null
       ]
     },
-    "timestamp": 1539574914
+    "timestamp": 1539605440
   }
 }

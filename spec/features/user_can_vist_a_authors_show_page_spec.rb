@@ -43,7 +43,6 @@ describe 'Author show page' do
 
     visit '/authors/1'
 
-    save_and_open_page
     expect(page).to have_content("George Orwell")
     expect(page).to have_content("1984")
     expect(page).to have_content("Animal Farm")

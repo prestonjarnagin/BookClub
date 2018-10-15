@@ -12,7 +12,7 @@ describe 'book index' do
 
     author_2.books << book_2
 
-    visit '/books'
+    visit books_path
 
     expect(page).to have_content('1984')
     expect(page).to have_content('300')
@@ -47,14 +47,14 @@ describe 'book index' do
     book_1.reviews << review_1
     book_1.reviews << review_2
 
-    visit '/books'
+    visit books_path
 
     expect(page).to have_content('4.5')
     expect(page).to have_content('2')
   end
 
   it "user can navigate to sorted pages" do
-    visit '/books'
+    visit books_path
     click_on("best_rated")
     expect(page).to have_current_path("/books?sorting=rating&direction=ASC")
     click_on("worst_rated")
@@ -93,7 +93,7 @@ describe 'book index' do
     book_1.reviews << review_1
     book_1.reviews << review_2
 
-    visit '/books'
+    visit books_path
 
     within '.books_list' do
       click_link '1984'
@@ -102,7 +102,7 @@ describe 'book index' do
       expect(page).to have_content("300")
     end
 
-    visit '/books'
+    visit books_path
     within ".top_books" do
       click_link '1984'
     end
@@ -110,7 +110,7 @@ describe 'book index' do
       expect(page).to have_content("1984")
       expect(page).to have_content("300")
 
-    visit '/books'
+    visit books_path
     within ".bottom_books" do
       click_link '1984'
     end
@@ -245,7 +245,7 @@ describe 'book show page' do
                 rating: 2,
                 user_id: user_2.id)
 
-    visit '/books'
+    visit books_path
 
     expect(page).to have_content("-Catcher in the Rye- -Meh- -It's okay-")
     expect(page).to have_content("-Poop Book- -It's okay- -Meh-")

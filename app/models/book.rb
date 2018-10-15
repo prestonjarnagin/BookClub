@@ -47,6 +47,7 @@ class Book < ApplicationRecord
       book = Book.find_by(title: params[:title])
       Author.find_by(name: params[:authors]).books << book
     end
+
     book
   end
 

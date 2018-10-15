@@ -41,7 +41,7 @@ describe 'Reviewing' do
 
     expect(page).to have_content("Harry Potter")
     click_button 'Add Review'
-    expect(current_path).to eq("/reviews/new")
+    expect(current_path).to eq("#{book_path(book)}/reviews/new")
     fill_in 'Title', with: "Good book"
     fill_in 'User', with: "isaacf_333"
     select '4', from: "Rating"

@@ -35,10 +35,8 @@ describe Review, type: :model do
       book_1.reviews << review_2
 
       reviews = Review.find_reviews_by_user_id(user_1.id)
-      expect(reviews.first.title).to eq('Great book!')
-      expect(reviews.first.body).to eq('I really liked this book! Must read!')
-      expect(reviews.second.title).to eq('Pretty good.')
-      expect(reviews.second.body).to eq("I enjoyed this book but it has it's issues.")
+      expect(reviews.first.title).to eq('Pretty good.')
+      expect(reviews.second.title).to eq('Great book!')
     end
   end
 end

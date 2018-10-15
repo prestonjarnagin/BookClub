@@ -41,9 +41,8 @@ describe 'Author show page' do
                 rating: 1,
                 user_id: user_2.id)
 
-    visit '/authors/1'
+    visit author_path(author_1)
 
-    save_and_open_page
     expect(page).to have_content("George Orwell")
     expect(page).to have_content("1984")
     expect(page).to have_content("Animal Farm")

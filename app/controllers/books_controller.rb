@@ -18,6 +18,8 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @reviews = Review.find_reviews_by_book(params[:id])
+    @top_reviews = @book.most_extreme_reviews(3, "DESC")
+    @bottom_reviews = @book.most_extreme_reviews(3, "ASC")
   end
 
   def new

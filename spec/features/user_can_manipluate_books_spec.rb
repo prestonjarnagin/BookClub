@@ -49,5 +49,6 @@ describe 'Reviewing' do
     click_button "Create Review"
 
     expect(current_path).to eq("/books/1")
+    expect(page).to have_content("Good book")
   end
 end

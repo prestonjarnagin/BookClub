@@ -1,0 +1,10 @@
+<h1><%= @author.name %></h1>
+
+<p><h3>Books:</h3> <% @author.books.each do |book| %>
+  <h4><%= book.title  %></h4>
+  Pages: <%= book.pages %>--
+  Highest review:
+  User: <%= book.best_review.user.username %>,
+   Rating(out of 5): <%= book.best_review.rating %>,
+   Title: <%= book.best_review.title %>
+<% end %></p>

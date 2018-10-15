@@ -3,4 +3,5 @@
 <p>Books: <% @author.books.each do |book| %>
   --<%= book.title  %>
   Pages: <%= book.pages %>--
+  <%  binding.pry %>
 <% end %></p>

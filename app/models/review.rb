@@ -13,15 +13,14 @@ class Review < ApplicationRecord
   end
 
   def self.create_review(params)
+
     if User.find_by(username: params[:user])
-      review = Review.create(title: params[:title], body: params[:body])
+      review = Review.create(title: params[:title], rating: params[:rating], body: params[:body])
       User.find_by(username: params[:user]).reviews << review
     else
       user = User.create(username: params[:user])
-      review = Review.create(title: params[:title], body: params[:body])
-      user.reviews << review
+      review = Review.create(title: params[:title], rating: params[:rating], body: params[:body], user_id: user.id)
     end
-    review
   end
 
   def self.find_reviews_by_user_id(user_id, direction = 'DESC')

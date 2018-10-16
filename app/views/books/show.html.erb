@@ -1,8 +1,28 @@
 <h1><%= @book.title %></h1>
 
-<form action="/reviews/new" method="get"><input type="submit" value="Add Review"></form>
-
+<form action="/books/<%= @book.id %>/reviews/new" method="get"><input type="submit" value="Add Review"></form>
 <%= link_to 'Delete', book_path(@book), method: :delete%>
+
+<div class="stats">
+  <h3>Stats</h3>
+  <p>Average Rating: <%= @book.average_rating %></p>
+  <div class="positive_reviews">
+    <% @top_reviews.each do |review| %>
+      <%= review.title %>
+      <%= review.rating %>
+      <%= review.user.username %>
+    <% end %>
+  </div>
+  <div class="negative_reviews">
+    <% @bottom_reviews.each do |review| %>
+      <%= review.title %>
+      <%= review.rating %>
+      <%= review.user.username %>
+    <% end %>
+  </div>
+
+
+</div>
 
 <p>Author: <% @book.authors.each do |author| %>
   <%= author.name  %>

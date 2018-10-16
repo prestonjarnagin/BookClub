@@ -47,10 +47,16 @@ class Book < ApplicationRecord
       book = Book.find_by(title: params[:title])
       Author.find_by(name: params[:authors]).books << book
     end
+
     book
   end
 
+  def most_extreme_reviews(limited_to, direction)
+    direction = direction.to_sym
+    reviews.order(rating: direction).limit(limited_to)
+  end
+
   def best_review
-    reviews.order(rating: :DESC).first
+    most_extreme_reviews(1, 'DESC').first
   end
 end

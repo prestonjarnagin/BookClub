@@ -123,5 +123,10 @@ describe Book, type: :model do
       expect(Author.all.count).to eq(3)
       expect(Author.all.last.books.count).to eq(1)
     end
+
+    it "can find most extreme reviews" do
+      result = @book_4.most_extreme_reviews(1, 'DESC')
+      expect(result.first.title).to eq('Pretty good.')
+    end
   end
 end

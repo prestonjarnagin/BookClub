@@ -103,7 +103,7 @@ describe 'book index' do
     end
 
     visit books_path
-    within ".top_books" do
+    within "#top_books" do
       click_link '1984'
     end
       expect(page).to have_current_path("/books/#{book_1.id}")
@@ -111,7 +111,7 @@ describe 'book index' do
       expect(page).to have_content("300")
 
     visit books_path
-    within ".bottom_books" do
+    within "#bottom_books" do
       click_link '1984'
     end
       expect(page).to have_current_path("/books/#{book_1.id}")

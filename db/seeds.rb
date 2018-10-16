@@ -63,4 +63,16 @@ end
   9.times do
     review_book(book_1)
   end
+
+  3.times do
+    user = create_user
+    5.times do
+      title = Faker::Hipster.sentence(4)
+      body = Faker::Hipster.paragraph(2)
+      rating = Faker::Number.between(1,5)
+      book = Book.create(prepare)
+      new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: user.id)
+    end
+  end
+
 end

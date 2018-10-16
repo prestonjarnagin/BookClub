@@ -192,14 +192,14 @@ describe 'book show page' do
     visit book_path(book_1)
 
 
-    within '.positive_reviews' do
+    within '#positive_reviews' do
       expect(page).to have_content('Great book!')
       expect(page).to have_content('Fantastic')
       expect(page).to have_content('Whooooo')
       expect(page).to_not have_content('One! :(')
     end
 
-    within '.negative_reviews' do
+    within '#negative_reviews' do
       expect(page).to have_content('One! :(')
       expect(page).to have_content('I hate it')
       expect(page).to have_content('Horrible')

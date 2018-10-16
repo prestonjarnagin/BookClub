@@ -6,9 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
+    <header>
+      <a href="/books">Book Club</a>
+    </header>
     <%= yield %>
+
+    <footer>
+      <a href="https://github.com/Isaac-Falkenstine">Isaac Falkenstine</a>
+      <a href="https://github.com/prestonjarnagin">Preston Jarnagin</a>
+    </footer>
+
   </body>
 </html>

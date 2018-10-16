@@ -1,52 +1,67 @@
-<h1>All Books</h1>
+<div class="home">
 
-<h3>Sort Books</h3>
-<a id="worst_rated" href="/books?sorting=rating&direction=DESC">Sort by Best Rated</a>
-<a id="best_rated" href="/books?sorting=rating&direction=ASC">Sort by Worst Rated</a>
-<a id="least_pages" href="/books?sorting=pages&direction=DESC">Sort by Most Pages</a>
-<a id="most_pages" href="/books?sorting=pages&direction=ASC">Sort by Least Pages</a>
-<a id="least_reviews" href="/books?sorting=reviews&direction=DESC">Sort by Most Reviews</a>
-<a id="most_reviews" href="/books?sorting=reviews&direction=ASC">Sort by Least Reviews</a>
 
-<form action="/books/new" method="get"><input type="submit" value="New book"></form>
+<div class="sorting">
+    <h3>Sort Books</h3>
+    <a id="worst_rated" href="/books?sorting=rating&direction=DESC">Sort by Best Rated</a>
+    <a id="best_rated" href="/books?sorting=rating&direction=ASC">Sort by Worst Rated</a>
+    <a id="least_pages" href="/books?sorting=pages&direction=DESC">Sort by Most Pages</a>
+    <a id="most_pages" href="/books?sorting=pages&direction=ASC">Sort by Least Pages</a>
+    <a id="least_reviews" href="/books?sorting=reviews&direction=DESC">Sort by Most Reviews</a>
+    <a id="most_reviews" href="/books?sorting=reviews&direction=ASC">Sort by Least Reviews</a>
+    <form class="create-button" action="/books/new" method="get"><input type="submit" value="New book"></form>
 
-<div class="stats">
-  <div class="top_books">
-    <h4>Highest Rated Books</h4>
-      <% @top_books.each do |book| %>
+  </div>
+
+  <div class="sidebar">
+
+
+    <div class="stats">
+
+      <div class="stat" id="top_books">
+        <h4>Highest Rated Books</h4>
+          <% @top_books.each do |book| %>
+          <a href="/books/<%= book.id %>">-<%= book.title %>-</a>
+          <% end %>
+      </div>
+
+      <div class="stat" id="bottom_books">
+        <h4>Lowest Rated Books</h4>
+        <% @bottom_books.each do |book| %>
         <a href="/books/<%= book.id %>">-<%= book.title %>-</a>
+        <% end %>
+      </div>
+
+      <div class="stat" id="most-reviews">
+        <h4>Users With Most Reviews</h4>
+        <% @top_users.each do |user| %>
+        <a href="/users/<%= user.id %>">-<%= user.username %>-</a>
+        <% end %>
+      </div>
+
+      <div class="stat" id="least_reviews">
+        <h4>User With Least Reviews</h4>
+        <% @bottom_users.each do |user| %>
+        <a href="/users/<%= user.id %>">-<%= user.username %>-</a>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+  <h1>All Books</h1>
+  <div class="books_list">
+    <% @books.each do |book|%>
+      <div class="book">
+        <a class="book-link" href="/books/<%= book.id %>"><%= book.title %></a>
+        <p>Author: <% book.authors.each do |author| %>
+          <a href="/authors/<%= author.id %>"><%= author.name %></a>
+        <% end %></p>
+        <p>Pages: <%= book.pages %></p>
+        <p>Year: <%= book.year %></p>
+        <p>Average Rating: <%= book.average_rating %></p>
+        <p>Total Number of Reviews: <%= book.reviews.count %></p>
+      </div>
       <% end %>
   </div>
-  <div class="bottom_books">
-  <h4>Lowest Rated Books</h4>
-  <% @bottom_books.each do |book| %>
-    <a href="/books/<%= book.id %>">-<%= book.title %>-</a>
-  <% end %>
-</div>
-
-<div>
-  <h4>Users With Most Reviews</h4>
-    <% @top_users.each do |user| %>
-      <a href="/users/<%= user.id %>">-<%= user.username %>-</a>
-    <% end %>
-</div>
-
-<div>
-  <h4>User With Least Reviews</h4>
-  <% @bottom_users.each do |user| %>
-    <a href="/users/<%= user.id %>">-<%= user.username %>-</a>
-  <% end %>
-</div>
-
-<div class="books_list">
-  <% @books.each do |book|%>
-    <a href="/books/<%= book.id %>"><%= book.title %></a>
-    <p>Author: <% book.authors.each do |author| %>
-      <a href="/authors/<%= author.id %>"><%= author.name %></a>
-    <% end %></p>
-    <p>Pages: <%= book.pages %></p>
-    <p>Year: <%= book.year %></p>
-    <p>Average Rating: <%= book.average_rating %></p>
-    <p>Total Number of Reviews: <%= book.reviews.count %></p>
-  <% end %>
 </div>

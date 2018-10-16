@@ -2,10 +2,10 @@
 <%= link_to 'Delete', author_path(@author), method: :delete%>
 
 <p><h3>Books:</h3> <% @author.books.each do |book| %>
-  <h4><%= book.title  %></h4>
+  <h4> Book: <a href="/books/<%= book.id%>"><%= book.title%></a></h4>
   Pages: <%= book.pages %>--
   Highest review:
-  User: <%= book.best_review.user.username %>,
+  User: <a href="/users/<%= book.best_review.user.id %>"><%= book.best_review.user.username %></a>,
    Rating(out of 5): <%= book.best_review.rating %>,
    Title: <%= book.best_review.title %>
 <% end %></p>

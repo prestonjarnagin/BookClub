@@ -32,8 +32,11 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    #TODO Move into model?
     BookAuthor.where(book_id: params[:id]).destroy_all
+    Review.where(book_id: params[:id]).destroy_all
     Book.destroy(params[:id])
+
     redirect_to books_path
   end
 end

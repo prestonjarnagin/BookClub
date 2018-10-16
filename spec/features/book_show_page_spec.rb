@@ -247,6 +247,12 @@ describe 'book show page' do
   it "user can delete a book" do
     author_1 = Author.create(name: 'George Orwell')
     book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
+    user_1 = User.create(username: "Isaac F.")
+    book_1.reviews.create(
+                title: "Three!",
+                body: "I enjoyed this book but it has it's issues.",
+                rating: 3,
+                user_id: user_1.id)
 
     visit book_path(book_1)
     click_on "Delete"

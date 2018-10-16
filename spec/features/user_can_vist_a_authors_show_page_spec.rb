@@ -54,4 +54,28 @@ describe 'Author show page' do
 
 
   end
+
+  it "can delete an author" do
+    author_1 = Author.create(name: 'George Orwell')
+    user_1 = User.create(username: "Isaac F.")
+    user_2 = User.create(username: "Preston J.")
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1948)
+
+    book_1.reviews.create(
+                title: "Pretty good.",
+                body: "I enjoyed this book but it has it's issues.",
+                rating: 2,
+                user_id: user_1.id)
+    book_1.reviews.create(
+                title: "It's aight",
+                body: "Mehhhhhh",
+                rating: 3,
+                user_id: user_2.id)
+
+    visit author_path(author_1)
+    click_on "Delete"
+
+    expect(current_path).to eq books_path
+    expect(page).to_not have_content('George Orwell')
+  end
 end

@@ -1,4 +1,5 @@
 <h1><%= @author.name %></h1>
+<%= link_to 'Delete', author_path(@author), method: :delete%>
 
 <p><h3>Books:</h3> <% @author.books.each do |book| %>
   <h4><%= book.title  %></h4>

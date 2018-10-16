@@ -7,12 +7,15 @@
     <a id="newest_reviews" href="?sorting=recency&direction=ASC">Sort By Most Recent</a>
     <a id="oldest_reviews" href="?sorting=recency&direction=DESC">Sort By Least Recent</a>
     <% @reviews.each do |review| %>
+
       <div class="review" id="<%= review.id %>">
         <h3>Book: <a href="/books/<%= review.book_id %>"><%= review.book_title %></a></h3>
         <h4>Overall Rating: <%= review.rating  %> / 5</h4>
         <h5>Review Title: <%= review.title  %><h5>
         <p>Body: <%= review.body  %></p>
+        <%= link_to 'Delete Review', "/reviews/#{review.id}", method: :delete%>
         <br />
       </div>
+
     <% end %>
 </div>

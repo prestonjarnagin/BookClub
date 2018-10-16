@@ -243,4 +243,14 @@ describe 'book show page' do
     expect(page).to have_content("New Review Body")
     expect(page).to have_content("Isaac F.")
   end
+
+  it "user can delete a book" do
+    author_1 = Author.create(name: 'George Orwell')
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
+
+    visit book_path(book_1)
+    click_on "Delete"
+    visit books_path
+    expect(page).to_not have_content("1984")
+  end
 end

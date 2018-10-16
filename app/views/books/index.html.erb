@@ -23,13 +23,18 @@
     <a href="/books/<%= book.id %>">-<%= book.title %>-</a>
   <% end %>
 </div>
+
+<div>
   <h4>Users With Most Reviews</h4>
     <% @top_users.each do |user| %>
-      -<%= user.username %>-
+      <a href="/users/<%= user.id %>">-<%= user.username %>-</a>
     <% end %>
+</div>
+
+<div>
   <h4>User With Least Reviews</h4>
   <% @bottom_users.each do |user| %>
-    -<%= user.username %>-
+    <a href="/users/<%= user.id %>">-<%= user.username %>-</a>
   <% end %>
 </div>
 
@@ -37,7 +42,7 @@
   <% @books.each do |book|%>
     <a href="/books/<%= book.id %>"><%= book.title %></a>
     <p>Author: <% book.authors.each do |author| %>
-      <%= author.name  %>
+      <a href="/authors/<%= author.id %>"><%= author.name %></a>
     <% end %></p>
     <p>Pages: <%= book.pages %></p>
     <p>Year: <%= book.year %></p>

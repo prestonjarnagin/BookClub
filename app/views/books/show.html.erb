@@ -7,32 +7,32 @@
   <h3>Stats</h3>
   <p>Average Rating: <%= @book.average_rating %></p>
   <div class="positive_reviews">
+    <p>Top Reviews</p>
     <% @top_reviews.each do |review| %>
       <%= review.title %>
       <%= review.rating %>
-      <%= review.user.username %>
+      <a href="/users/<%= review.user.id %>"><%= review.user.username %></a>
     <% end %>
   </div>
   <div class="negative_reviews">
+    <p>Bottom Reviews</p>
     <% @bottom_reviews.each do |review| %>
       <%= review.title %>
       <%= review.rating %>
-      <%= review.user.username %>
+      <a href="/users/<%= review.user.id %>"><%= review.user.username %></a>
     <% end %>
   </div>
-
-
 </div>
 
 <p>Author: <% @book.authors.each do |author| %>
-  <%= author.name  %>
+  <a href="/authors/<%= author.id %>"><%= author.name %></a>
 <% end %></p>
 <p>Pages: <%= @book.pages %></p>
 <p>Year Published: <%= @book.year %></p>
 <h2>Reviews</h2>
 <% @reviews.each do |review| %>
 <p>Title: <%= review.title %> </p>
-<p>Username: <%= review.username %> </p>
+<p>Username:       <a href="/users/<%= review.user.id %>"><%= review.username %></a></p>
 <p> <%= review.body %> </p>
 <p>Rating (out of 5): <%= review.rating %> </p>
 <% end %>

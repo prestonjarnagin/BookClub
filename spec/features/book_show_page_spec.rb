@@ -111,6 +111,16 @@ describe 'book show page' do
                 body: "I really liked this book! Must read!",
                 rating: 5,
                 user_id: user_2.id)
+    book_3.reviews.create(
+                title: "Great book!",
+                body: "I really liked this book! Must read!",
+                rating: 5,
+                user_id: user_2.id)
+    book_3.reviews.create(
+                title: "Great book!",
+                body: "I really liked this book! Must read!",
+                rating: 5,
+                user_id: user_2.id)
 
     # Forth Book
     @book_4 = author_1.books.create(title: "Meh", pages: 200, year: 1940)
@@ -126,7 +136,6 @@ describe 'book show page' do
                 user_id: user_2.id)
 
     visit books_path
-
     expect(page).to have_content("-Catcher in the Rye- -Meh- -It's okay-")
     expect(page).to have_content("-Poop Book- -It's okay- -Meh-")
     expect(page).to have_content("-Isaac F.- -Preston J.-")
@@ -202,9 +211,36 @@ describe 'book show page' do
 
   it "new user can leave a review" do
     author_1 = Author.create(name: 'George Orwell')
-    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
 
     visit book_path(book_1)
-    click_on 'New Review'
+    click_on 'Add Review'
+    fill_in "Title", with: "New Review"
+    fill_in "User", with: "New User"
+    select "3", from: "Rating"
+    fill_in "Body", with: "New Review Body"
+    click_button "Create Review"
+
+    expect(page).to have_content("New Review")
+    expect(page).to have_content("New Review Body")
+    expect(page).to have_content("New User")
+  end
+
+  it "existing user can leave a review" do
+    author_1 = Author.create(name: 'George Orwell')
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
+    User.create(username: "Isaac F.")
+
+    visit book_path(book_1)
+    click_on 'Add Review'
+    fill_in "Title", with: "New Review"
+    fill_in "User", with: "Isaac F."
+    select "3", from: "Rating"
+    fill_in "Body", with: "New Review Body"
+    click_button "Create Review"
+
+    expect(page).to have_content("New Review")
+    expect(page).to have_content("New Review Body")
+    expect(page).to have_content("Isaac F.")
   end
 end

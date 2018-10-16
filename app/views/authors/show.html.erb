@@ -1,11 +1,20 @@
-<h1><%= @author.name %></h1>
-<%= link_to 'Delete', author_path(@author), method: :delete%>
+<div class="author">
+  <h1 class="author-name"><%= @author.name %></h1>
 
-<p><h3>Books:</h3> <% @author.books.each do |book| %>
-  <h4> Book: <a href="/books/<%= book.id%>"><%= book.title%></a></h4>
-  Pages: <%= book.pages %>--
-  Highest review:
-  User: <a href="/users/<%= book.best_review.user.id %>"><%= book.best_review.user.username %></a>,
-   Rating(out of 5): <%= book.best_review.rating %>,
-   Title: <%= book.best_review.title %>
-<% end %></p>
+  <h3>Books:</h3>
+
+  <% @author.books.each do |book| %>
+
+  <div class="book">
+    <h3> Book: <a href="/books/<%= book.id%>"><%= book.title%></a></h3>
+    <p>Pages: <%= book.pages %></p>
+    <h4>Highest review:</h4>
+    <p>User: <a href="/users/<%= book.best_review.user.id %>"><%= book.best_review.user.username %></a></p>
+     <p>Rating(out of 5): <%= book.best_review.rating %></p>
+     <p>Title: <%= book.best_review.title %></p>
+  </div>
+  <br />
+  <% end %>
+
+  <button class="delete-button"><%= button_to 'Delete', author_path(@author), method: :delete%></button>
+</div>

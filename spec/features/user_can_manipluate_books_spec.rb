@@ -26,7 +26,7 @@ describe 'Deletion' do
     visit book_path(book)
 
     expect(page).to have_content("Harry Potter")
-    click_link 'Delete'
+    click_on 'Delete'
 
     # expect(current_path).to eq("/books")
     expect(current_path).to eq(books_path)

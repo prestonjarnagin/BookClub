@@ -1,12 +1,23 @@
-<h1><%= @book.title %></h1>
+<h1 class="book-title"><%= @book.title %></h1>
 
-<form action="/books/<%= @book.id %>/reviews/new" method="get"><input type="submit" value="Add Review"></form>
-<%= link_to 'Delete', book_path(@book), method: :delete%>
+<form class="create-button" action="/books/<%= @book.id %>/reviews/new" method="get"><input type="submit" value="Add Review"></form>
+
+
+
+<div class="book-info">
+  <div class="authors">
+    <p>Author: <% @book.authors.each do |author| %>
+      <a href="/authors/<%= author.id %>"><%= author.name %></a>
+      <% end %></p>
+    </div>
+    <p>Pages: <%= @book.pages %></p>
+    <p>Year Published: <%= @book.year %></p>
+</div>
 
 <div class="stats">
   <h3>Stats</h3>
   <p>Average Rating: <%= @book.average_rating %></p>
-  <div class="positive_reviews">
+  <div class="stat" id="positive_reviews">
     <p>Top Reviews</p>
     <% @top_reviews.each do |review| %>
       <%= review.title %>
@@ -14,7 +25,7 @@
       <a href="/users/<%= review.user.id %>"><%= review.user.username %></a>
     <% end %>
   </div>
-  <div class="negative_reviews">
+  <div class="stat" id="negative_reviews">
     <p>Bottom Reviews</p>
     <% @bottom_reviews.each do |review| %>
       <%= review.title %>
@@ -24,15 +35,15 @@
   </div>
 </div>
 
-<p>Author: <% @book.authors.each do |author| %>
-  <a href="/authors/<%= author.id %>"><%= author.name %></a>
-<% end %></p>
-<p>Pages: <%= @book.pages %></p>
-<p>Year Published: <%= @book.year %></p>
-<h2>Reviews</h2>
+
+<h2 id="book-reviews-section-title">Reviews</h2>
 <% @reviews.each do |review| %>
+<div class="review">
 <p>Title: <%= review.title %> </p>
 <p>Username:       <a href="/users/<%= review.user.id %>"><%= review.username %></a></p>
 <p> <%= review.body %> </p>
 <p>Rating (out of 5): <%= review.rating %> </p>
+</div>
 <% end %>
+
+<button class="delete-button"><%= button_to 'Delete', book_path(@book), method: :delete%></button>

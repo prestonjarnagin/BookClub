@@ -1,4 +1,4 @@
-<h1><%= @user.username %></h1>
+<h1 class="username"><%= @user.username %></h1>
 
 <div class=reviews>
 
@@ -8,12 +8,12 @@
     <a id="oldest_reviews" href="?sorting=recency&direction=DESC">Sort By Least Recent</a>
     <% @reviews.each do |review| %>
 
-      <div class="review" id="<%= review.id %>">
+      <div class="review" id="review-<%= review.id %>">
         <h3>Book: <a href="/books/<%= review.book_id %>"><%= review.book_title %></a></h3>
         <h4>Overall Rating: <%= review.rating  %> / 5</h4>
         <h5>Review Title: <%= review.title  %><h5>
         <p>Body: <%= review.body  %></p>
-        <%= link_to 'Delete Review', "/reviews/#{review.id}", method: :delete%>
+        <button class="delete-button"><%= button_to 'Delete Review', "/reviews/#{review.id}", method: :delete%></button>
         <br />
       </div>
 

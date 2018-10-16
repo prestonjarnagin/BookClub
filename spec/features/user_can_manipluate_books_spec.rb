@@ -47,7 +47,6 @@ describe 'Reviewing' do
     select '4', from: "Rating"
     fill_in 'Body', with: "I really enjoyed this book. Makes me wanna be a wizard."
     click_button "Create Review"
-
     expect(current_path).to eq("/books/1")
     expect(page).to have_content("Good book")
   end

@@ -5,6 +5,7 @@
 
 <div class="stats">
   <h3>Stats</h3>
+  <p>Average Rating: <%= @book.average_rating %></p>
   <div class="positive_reviews">
     <% @top_reviews.each do |review| %>
       <%= review.title %>

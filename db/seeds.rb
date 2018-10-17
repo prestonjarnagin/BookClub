@@ -26,7 +26,7 @@ def create_user
   user = User.create(username: name)
 end
 
-10.times do
+6.times do
   author_name = Faker::Book.author
 
   author_1 = Author.create(name: author_name)
@@ -65,14 +65,32 @@ end
   end
 
   3.times do
-    user = create_user
-    5.times do
+    user_1 = create_user
+    user_2 = create_user
+    user_3 = create_user
+
+    3.times do
+      author_name_1 = Faker::Book.author
+
+      author_1 = Author.create(name: author_name_1)
       title = Faker::Hipster.sentence(4)
       body = Faker::Hipster.paragraph(2)
       rating = Faker::Number.between(1,5)
-      book = Book.create(prepare)
-      new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: user.id)
+      book = author_1.books.create(prepare)
+      new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: user_1.id)
+      new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: user_2.id)
+      new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: user_3.id)
+    end
+    2.times do
+      author_name_1 = Faker::Book.author
+
+      author_1 = Author.create(name: author_name_1)
+      title = Faker::Hipster.sentence(4)
+      body = Faker::Hipster.paragraph(2)
+      rating = Faker::Number.between(1,5)
+      book = author_1.books.create(prepare)
+      new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: user_1.id)
+      new_review = book.reviews.create(title: title, body: body, rating: rating, user_id: user_2.id)
     end
   end
-
 end

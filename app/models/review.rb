@@ -26,5 +26,4 @@ class Review < ApplicationRecord
   def self.find_reviews_by_user_id(user_id, direction = 'DESC')
     select('reviews.*, books.title AS book_title').joins(:book).where(user_id: user_id).order("created_at #{direction}")
   end
-
 end

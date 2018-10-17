@@ -3,25 +3,19 @@ require 'rails_helper'
 describe 'book show page' do
   it "user can navigate to book show page" do
     author_1 = Author.create(name: 'George Orwell')
-    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
     user_1 = User.create(username: "Isaac F.")
     user_2 = User.create(username: "Preston J.")
     review_1 = Review.create(
               title: "Great book!",
               body: "I really liked this book! Must read!",
-              rating: 5)
+              rating: 5,
+              user_id: user_1.id)
     review_2 = Review.create(
               title: "Pretty good.",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
-
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    review_2.user_id = user_2.id
-    review_2.book_id = book_1.id
-    author_1.books << book_1
-    book_1.reviews << review_1
-    book_1.reviews << review_2
+              rating: 4,
+              user_id: user_2.id)
 
     visit "/books/#{book_1.id}"
     expect(page).to have_content('1984')
@@ -31,25 +25,19 @@ describe 'book show page' do
 
   it "user can see book reviews" do
     author_1 = Author.create(name: 'George Orwell')
-    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
     user_1 = User.create(username: "Isaac F.")
     user_2 = User.create(username: "Preston J.")
-    review_1 = Review.create(
+    review_1 = book_1.reviews.create(
               title: "Great book!",
               body: "I really liked this book! Must read!",
-              rating: 5)
-    review_2 = Review.create(
+              rating: 5,
+              user_id: user_1.id)
+    review_2 = book_1.reviews.create(
               title: "Pretty good.",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
-
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    review_2.user_id = user_2.id
-    review_2.book_id = book_1.id
-    author_1.books << book_1
-    book_1.reviews << review_1
-    book_1.reviews << review_2
+              rating: 4,
+              user_id: user_2.id)
 
     visit "/books/#{book_1.id}"
 
@@ -190,7 +178,6 @@ describe 'book show page' do
                 user_id: user_2.id)
 
     visit book_path(book_1)
-
 
     within '#positive_reviews' do
       expect(page).to have_content('Great book!')

@@ -51,8 +51,6 @@ describe 'Author show page' do
     expect(page).to have_content("Pretty good.")
     expect(page).to have_content("It's aight")
     expect(page).to have_content("Great book!")
-
-
   end
 
   it "can delete an author" do

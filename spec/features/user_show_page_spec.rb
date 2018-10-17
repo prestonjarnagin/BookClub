@@ -9,24 +9,19 @@ describe 'basic user show page' do
 
   it 'shows all reviews for the current user' do
     author_1 = Author.create(name: 'George Orwell')
-    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
     user_1 = User.create(username: "Isaac F.")
-    review_1 = Review.create(
+    user_2 = User.create(username: "Preston J.")
+    review_1 = book_1.reviews.create(
               title: "Great book!",
               body: "I really liked this book! Must read!",
-              rating: 5)
-    review_2 = Review.create(
+              rating: 5,
+              user_id: user_1.id)
+    review_2 = book_1.reviews.create(
               title: "Pretty good.",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
-
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    review_2.user_id = user_1.id
-    review_2.book_id = book_1.id
-    author_1.books << book_1
-    book_1.reviews << review_1
-    book_1.reviews << review_2
+              rating: 4,
+              user_id: user_1.id)
 
     visit "/users/#{user_1.id}"
 
@@ -38,25 +33,19 @@ describe 'basic user show page' do
 
   it 'shows reviews from multiple books' do
     author_1 = Author.create(name: 'George Orwell')
-    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
-    book_2 = Book.create(title: 'Brave New World', pages: 200, year: 1940)
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
     user_1 = User.create(username: "Isaac F.")
-    review_1 = Review.create(
+    user_2 = User.create(username: "Preston J.")
+    review_1 = book_1.reviews.create(
               title: "Great book!",
               body: "I really liked this book! Must read!",
-              rating: 5)
-    review_2 = Review.create(
+              rating: 5,
+              user_id: user_1.id)
+    review_2 = book_1.reviews.create(
               title: "Pretty good.",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
-
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    review_2.user_id = user_1.id
-    review_2.book_id = book_1.id
-    author_1.books << book_1
-    book_1.reviews << review_1
-    book_2.reviews << review_2
+              rating: 4,
+              user_id: user_1.id)
 
     visit "/users/#{user_1.id}"
 
@@ -69,28 +58,20 @@ describe 'basic user show page' do
   it 'shows information about the books' do
     author_1 = Author.create(name: 'George Orwell')
     author_2 = Author.create(name: 'Aldous Huxley')
-
-    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
-    book_2 = Book.create(title: 'Brave New World', pages: 200, year: 1932)
-
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
+    book_2 = author_2.books.create(title: 'Brave New World', pages: 200, year: 1932)
     user_1 = User.create(username: "Isaac F.")
-    review_1 = Review.create(
+    user_2 = User.create(username: "Preston J.")
+    review_1 = book_1.reviews.create(
               title: "Great book!",
               body: "I really liked this book! Must read!",
-              rating: 5)
-    review_2 = Review.create(
+              rating: 5,
+              user_id: user_1.id)
+    review_2 = book_2.reviews.create(
               title: "Pretty good.",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
-
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    review_2.user_id = user_1.id
-    review_2.book_id = book_1.id
-    author_1.books << book_1
-    author_2.books << book_2
-    book_1.reviews << review_1
-    book_2.reviews << review_2
+              rating: 4,
+              user_id: user_1.id)
 
     visit "/users/#{user_1.id}"
 
@@ -108,29 +89,30 @@ describe 'user show page sorting' do
     book_2 = author_2.books.create(title: 'Brave New World', pages: 200, year: 1932)
 
     user_1 = User.create(username: "Isaac F.")
-    review_1 = user_1.reviews.create(
+    review_1 = book_1.reviews.create(
               title: "First Recent Review",
               body: "I really liked this book! Must read!",
-              rating: 5)
+              rating: 5,
+              user_id: user_1.id)
     sleep(0.1.seconds)
-    review_2 = user_1.reviews.create(
+    review_2 = book_2.reviews.create(
               title: "Second Recent Review",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
+              rating: 4,
+              user_id: user_1.id)
     sleep(0.1.seconds)
-    review_3 = user_1.reviews.create(
+    review_3 = book_1.reviews.create(
               title: "Third Recent Review",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
+              rating: 4,
+              user_id: user_1.id)
     sleep(0.1.seconds)
-    review_4 = user_1.reviews.create(
+    review_4 = book_1.reviews.create(
               title: "Old Review",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 2)
-    book_1.reviews << review_1
-    book_1.reviews << review_3
-    book_2.reviews << review_2
-    book_1.reviews << review_4
+              rating: 2,
+              user_id: user_1.id)
+
 
     visit "/users/#{user_1.id}"
     click_link 'Sort By Most Recent'
@@ -145,29 +127,29 @@ describe 'user show page sorting' do
     book_2 = author_2.books.create(title: 'Brave New World', pages: 200, year: 1932)
 
     user_1 = User.create(username: "Isaac F.")
-    review_1 = user_1.reviews.create(
+    review_1 = book_1.reviews.create(
               title: "First Recent Review",
               body: "I really liked this book! Must read!",
-              rating: 5)
+              rating: 5,
+              user_id: user_1.id)
     sleep(0.1.seconds)
-    review_2 = user_1.reviews.create(
+    review_2 = book_2.reviews.create(
               title: "Second Recent Review",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
+              rating: 4,
+              user_id: user_1.id)
     sleep(0.1.seconds)
-    review_3 = user_1.reviews.create(
+    review_3 = book_1.reviews.create(
               title: "Third Recent Review",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 4)
+              rating: 4,
+              user_id: user_1.id)
     sleep(0.1.seconds)
-    review_4 = user_1.reviews.create(
+    review_4 = book_1.reviews.create(
               title: "Old Review",
               body: "I enjoyed this book but it has it's issues.",
-              rating: 2)
-    book_1.reviews << review_1
-    book_1.reviews << review_3
-    book_2.reviews << review_2
-    book_1.reviews << review_4
+              rating: 2,
+              user_id: user_1.id)
 
     visit "/users/#{user_1.id}"
     click_link 'Sort By Least Recent'
@@ -179,17 +161,14 @@ end
 describe 'deletion' do
   it 'lets us delete a review' do
     author_1 = Author.create(name: 'George Orwell')
-    book_1 = Book.create(title: '1984', pages: 300, year: 1936)
+    book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
     user_1 = User.create(username: "Isaac F.")
-    review_1 = Review.create(
+    review_1 = book_1.reviews.create(
               title: "Great book!",
               body: "I really liked this book! Must read!",
-              rating: 5)
+              rating: 5,
+              user_id: user_1.id)
 
-    review_1.user_id = user_1.id
-    review_1.book_id = book_1.id
-    author_1.books << book_1
-    book_1.reviews << review_1
 
     visit user_path(user_1)
     click_on "Delete Review"

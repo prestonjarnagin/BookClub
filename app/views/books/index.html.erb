@@ -1,7 +1,5 @@
 <div class="home">
-
-
-<div class="sorting">
+  <div class="sorting">
     <h3>Sort Books</h3>
     <a id="worst_rated" href="/books?sorting=rating&direction=DESC">Sort by Best Rated</a>
     <a id="best_rated" href="/books?sorting=rating&direction=ASC">Sort by Worst Rated</a>
@@ -10,14 +8,10 @@
     <a id="least_reviews" href="/books?sorting=reviews&direction=DESC">Sort by Most Reviews</a>
     <a id="most_reviews" href="/books?sorting=reviews&direction=ASC">Sort by Least Reviews</a>
     <form class="create-button" action="/books/new" method="get"><input type="submit" value="New book"></form>
-
   </div>
 
   <div class="sidebar">
-
-
     <div class="stats">
-
       <div class="stat" id="top_books">
         <h4>Highest Rated Books</h4>
           <% @top_books.each do |book| %>
@@ -45,7 +39,6 @@
         <a href="/users/<%= user.id %>">-<%= user.username %>-</a>
         <% end %>
       </div>
-
     </div>
   </div>
 

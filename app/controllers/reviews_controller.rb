@@ -1,8 +1,4 @@
 class ReviewsController < ApplicationController
-  # def index
-  #   @reviews = Review.all
-  # end
-
   def new
     @book = Book.find(params[:book_id])
     @review = Review.new
@@ -19,7 +15,6 @@ class ReviewsController < ApplicationController
     @review = Review.destroy(params[:id])
     redirect_to user_path(@review.user)
   end
-
 end
 
 private

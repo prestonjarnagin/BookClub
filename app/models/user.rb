@@ -9,5 +9,4 @@ class User < ApplicationRecord
       .order("total_reviews #{direction}")
     users.limit(count)
   end
-
 end

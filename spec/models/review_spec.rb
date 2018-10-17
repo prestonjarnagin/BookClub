@@ -15,24 +15,19 @@ describe Review, type: :model do
   describe 'Methods' do
     it 'can find all reviews belonging to a specific user' do
       author_1 = Author.create(name: 'George Orwell')
-      book_1 = Book.create(title: '1984', pages: 300, year: 1936)
+      book_1 = author_1.books.create(title: '1984', pages: 300, year: 1936)
       user_1 = User.create(username: "Isaac F.")
-      review_1 = Review.create(
+      review_1 = book_1.reviews.create(
                 title: "Great book!",
                 body: "I really liked this book! Must read!",
-                rating: 5)
-      review_2 = Review.create(
+                rating: 5,
+                user_id: user_1.id)
+      review_2 = book_1.reviews.create(
                 title: "Pretty good.",
                 body: "I enjoyed this book but it has it's issues.",
-                rating: 4)
+                rating: 4,
+                user_id: user_1.id)
 
-      review_1.user_id = user_1.id
-      review_1.book_id = book_1.id
-      review_2.user_id = user_1.id
-      review_2.book_id = book_1.id
-      author_1.books << book_1
-      book_1.reviews << review_1
-      book_1.reviews << review_2
 
       reviews = Review.find_reviews_by_user_id(user_1.id)
       expect(reviews.first.title).to eq('Pretty good.')

@@ -27,7 +27,7 @@ Abilities Expectations (Technical strengths and areas for desired improvement):
 Our strength is the logically side of programming, and we want to imporve our skills in CSS and HTML.
 
 Workload Expectations (What features do we each want to work on?):
-Dynamicly assigning and reassiging work as we gio along and see what the workload is like.
+Dynamicly assigning and reassiging work as we go along and see what the workload is like.
 
 Workflow Expectations (Git workflow/Tools/Code Review/Reviewing Pull Requests):
 -Always work on a new branch

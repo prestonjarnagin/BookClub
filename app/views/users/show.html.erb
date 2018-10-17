@@ -1,7 +1,6 @@
 <h1 class="username"><%= @user.username %></h1>
 
 <div class=reviews>
-
   <h2>Reviews</h3>
     <h3>Sort Reviews</h3>
     <a id="newest_reviews" href="?sorting=recency&direction=ASC">Sort By Most Recent</a>
@@ -16,6 +15,5 @@
         <button class="delete-button"><%= button_to 'Delete Review', "/reviews/#{review.id}", method: :delete%></button>
         <br />
       </div>
-
     <% end %>
 </div>
